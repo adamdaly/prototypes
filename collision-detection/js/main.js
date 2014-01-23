@@ -193,39 +193,74 @@
 
 // (function(){
     var stage = document.getElementById('stage'),
-        context = stage.getContext('2d');
+        context = stage.getContext('2d'),
+        quadtree;
     
     stage.width = 400;
     stage.height = 400;
     
     var sprites = [];
     
-    stage.addEventListener('click', function(e){
-        sprites.push(new Sprite(e.offsetX, e.offsetY));
-        quadtree.add(e.offsetX, e.offsetY);
-    }, false);
+    // stage.addEventListener('click', function(e){
+    //     sprites.push(new Sprite(e.offsetX, e.offsetY));
+    //     quadtree.add(e.offsetX, e.offsetY);
+    // }, false);
     
-    function Sprite(x, y){
-        this.x = x;
-        this.y = y;
-        this.init();
-    }
+    // function Sprite(x, y){
+    //     this.x = x;
+    //     this.y = y;
+    //     this.quadrant = '';
+    //     this.init();
+    // }
     
+    // Sprite.prototype = {
+    //     init: function(){
+    //         context.fillRect(this.x, this.y, 4, 4);
+    //     }
+    // }
+
+    var Sprite = function(name, image, x, y){
+         this.name = name;
+         this.image = image;
+         this.x = x;
+         this.y = y;
+         this.width = image.width;
+         this.height = image.height;
+
+         this.init();
+     }
+
     Sprite.prototype = {
         init: function(){
-            context.fillRect(this.x, this.y, 4, 4);
+            this.canvas = document.createElement('canvas');
+            this.context = this.canvas.getContext('2d');
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+
+            this.context.drawImage(this.image, 0, 0);
         }
+    };
+
+    var sprite = new Image();
+
+    sprite.onload = function(){
+
+        for(var i = 0; i < 10; i++){
+        	sprites.push(new Sprite('sprite' + i, sprite, parseInt(Math.random() * 400), parseInt(Math.random() * 400)));
+        }
+
+        drawSprites();
+        quadtree = new Quadtree();
     }
 
-    for(var i = 0; i < 10; i++){
-    	sprites.push(new Sprite(parseInt(Math.random() * 400), parseInt(Math.random() * 400)));
-    }
-    
+    sprite.src = 'img/sprite.png';
+
     function Quadtree(){
-        this.maxDepth = 2;
+        this.maxDepth = 1;
         this.currentDepth = 0;
         this.width = stage.width;
         this.height = stage.height;
+        this.elements = sprites.slice(0);
         this.init();
     }
     
@@ -280,41 +315,74 @@
                     }
                 }
             };
-        }
-        , update: function(node){
 
-            for(var i in sprites){
 
-                if(Math.floor(sprites[i].x / (this.width / 2)) === 0 && Math.floor(sprites[i].y / (this.height / 2)) === 0){
-                    node[0].elements.push(sprites[i]);
-                    sprites[i].quadrant = 'a';
+            for(var i = this.elements.length - 1; i >= 0; i--){
 
-                }else if(Math.floor(sprites[i].x / (this.width / 2)) === 1 && Math.floor(sprites[i].y / (this.height / 2)) === 0){
-                    node[1].elements.push(sprites[i]);
-                    sprites[i].quadrant = 'b';
+            // for(var i in this.elements){
 
-                }else if(Math.floor(sprites[i].x / (this.width / 2)) === 0 && Math.floor(sprites[i].y / (this.height / 2)) === 1){
-                    node[2].elements.push(sprites[i]);
-                    sprites[i].quadrant = 'c';
+                if(
+                    (Math.floor(this.elements[i].x / (this.width / 2)) === 0 && Math.floor(this.elements[i].y / (this.height / 2)) === 0) &&
+                    (Math.floor((this.elements[i].x + this.elements[i].width) / (this.width / 2)) === 0 && Math.floor((this.elements[i].y + this.elements[i].height) / (this.height / 2)) === 0)
+                ){
+                    this.nodes[0].elements.push(this.elements[i]);
+                    this.elements[i].quadrant += 'a';
+                    this.elements.splice(i, 1);
 
-                }else{
-                    node[3].elements.push(sprites[i]);
-                    sprites[i].quadrant = 'd';
+                }else if(
+                    (Math.floor(this.elements[i].x / (this.width / 2)) === 1 && Math.floor(this.elements[i].y / (this.height / 2)) === 0) &&
+                    (Math.floor((this.elements[i].x + this.elements[i].width) / (this.width / 2)) === 1 && Math.floor((this.elements[i].y + this.elements[i].height) / (this.height / 2)) === 0)
+                ){
+                    this.nodes[1].elements.push(this.elements[i]);
+                    this.elements[i].quadrant += 'b';
+                    this.elements.splice(i, 1);
+
+                }else if(
+                    (Math.floor(this.elements[i].x / (this.width / 2)) === 0 && Math.floor(this.elements[i].y / (this.height / 2)) === 1) &&
+                    (Math.floor((this.elements[i].x + this.elements[i].width) / (this.width / 2)) === 0 && Math.floor((this.elements[i].y + this.elements[i].height) / (this.height / 2)) === 1)
+                ){
+                    this.nodes[2].elements.push(this.elements[i]);
+                    this.elements[i].quadrant += 'c';
+                    this.elements.splice(i, 1);
+
+                }else if(
+                    (Math.floor(this.elements[i].x / (this.width / 2)) === 1 && Math.floor(this.elements[i].y / (this.height / 2)) === 1) &&
+                    (Math.floor((this.elements[i].x + this.elements[i].width) / (this.width / 2)) === 1 && Math.floor((this.elements[i].y + this.elements[i].height) / (this.height / 2)) === 1)
+                ){
+                    this.nodes[3].elements.push(this.elements[i]);
+                    this.elements[i].quadrant += 'd';
+                    this.elements.splice(i, 1);
 
                 }
             }
 
-            for(var j in this.nodes){
-                if(this.nodes[j].elements.length > 0){
-                    this.subdivide(this.nodes[j]);
+            for(var i in this.nodes){
+
+                context.globalCompositeOperation = 'destination-over';
+
+
+                context.fillStyle = 'rgba(' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', 255)';
+                context.fillRect(this.nodes[i].bounds.offset.x, this.nodes[i].bounds.offset.y, this.nodes[i].bounds.width, this.nodes[i].bounds.height);
+            }
+        }
+        , update: function(node){
+
+
+            for(var j in node){
+                if(node[j].elements.length > 0){
+                    this.subdivide(node[j]);
                 }
+            }
+
+            for(var k in node){
+                if(node[k].depth > this.maxDepth){
+                    return;
+                }
+                this.update(node[k].nodes);
             }
         }
 
         , subdivide: function(node){
-            if(node.depth > this.maxDepth){
-                return;
-            }
 
             if(node.elements.length > 0){
                 node.nodes = {}
@@ -351,34 +419,39 @@
                 }
 
                 for(var k = node.elements.length - 1; k >= 0; k--){
-                    if(Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 0){
-                        // console.log(node.elements[k], 'a', k)
+                    if(
+                        (Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 0) &&
+                        (Math.floor(((node.elements[k].x + node.elements[k].width) - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor(((node.elements[k].y + node.elements[k].height) - node.bounds.offset.y) / (node.bounds.height / 2)) === 0)
+                    ){
                         node.nodes[0].elements.push(node.elements[k]);
-                        console.log(k);
                         node.nodes[0].elements[node.nodes[0].elements.length - 1].quadrant += 'a';
                         node.elements.splice(k, 1);
 
-                    }else if(Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 0){
-                        // console.log(node.elements[k], 'b', k)
+                    }else if(
+                        (Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 0) &&
+                        (Math.floor(((node.elements[k].x + node.elements[k].width) - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor(((node.elements[k].y + node.elements[k].height) - node.bounds.offset.y) / (node.bounds.height / 2)) === 0)
+                    ){
                         node.nodes[1].elements.push(node.elements[k]);
-                        console.log(k);
                         node.nodes[1].elements[node.nodes[1].elements.length - 1].quadrant += 'b';
                         node.elements.splice(k, 1);
 
-                    }else if(Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 1){
-                        // console.log(node.elements[k], 'c', k)
+                    }else if(
+                        (Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 1) &&
+                        (Math.floor(((node.elements[k].x + node.elements[k].width) - node.bounds.offset.x) / (node.bounds.width / 2)) === 0 && Math.floor(((node.elements[k].y + node.elements[k].height) - node.bounds.offset.y) / (node.bounds.height / 2)) === 1)
+                    ){
                         node.nodes[2].elements.push(node.elements[k]);
-                        console.log(k);
                         node.nodes[2].elements[node.nodes[2].elements.length - 1].quadrant += 'c';
                         node.elements.splice(k, 1);
 
-                    }else if(Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 1){
-                        // console.log(node.elements[k], 'd', k)
+                    }else if(
+                        (Math.floor((node.elements[k].x - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor((node.elements[k].y - node.bounds.offset.y) / (node.bounds.height / 2)) === 1) &&
+                        (Math.floor(((node.elements[k].x + node.elements[k].width) - node.bounds.offset.x) / (node.bounds.width / 2)) === 1 && Math.floor(((node.elements[k].y + node.elements[k].height) - node.bounds.offset.y) / (node.bounds.height / 2)) === 1)
+                    ){
                         node.nodes[3].elements.push(node.elements[k]);
-                        console.log(k);
                         node.nodes[3].elements[node.nodes[3].elements.length - 1].quadrant += 'd';
                         node.elements.splice(k, 1);
-
+                    }else{
+                        return;
                     }
                 }
             }
@@ -392,32 +465,24 @@
                 }
 
                 context.fillStyle = '#000000';
-                drawSprites();
             }
         }
     };
     
-    var quadtree = new Quadtree();
-
     function drawSprites(){
         for(var i in sprites){
-            context.fillRect(sprites[i].x, sprites[i].y, 4, 4);
+            context.drawImage(sprites[i].image, sprites[i].x, sprites[i].y);
         }
     }
 
-    drawSprites();
+  //   for(var i in quadtree.nodes){
 
-    for(var i in quadtree.nodes){
-
-		context.globalCompositeOperation = 'destination-over';
+		// context.globalCompositeOperation = 'destination-over';
 
 
-    	context.fillStyle = 'rgba(' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', 255)';
-    	context.fillRect(quadtree.nodes[i].bounds.offset.x, quadtree.nodes[i].bounds.offset.y, quadtree.nodes[i].bounds.width, quadtree.nodes[i].bounds.height);
-    	// for(var j = 0; j < 4; j++){
-    	// 	console.log(quadtree.nodes[i].bounds[j]);
-    	// }
-    }
+  //   	context.fillStyle = 'rgba(' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', ' + parseInt(Math.random() * 255) + ', 255)';
+  //   	context.fillRect(quadtree.nodes[i].bounds.offset.x, quadtree.nodes[i].bounds.offset.y, quadtree.nodes[i].bounds.width, quadtree.nodes[i].bounds.height);
+  //   }
 
 // })();
 
