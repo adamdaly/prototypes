@@ -192,6 +192,7 @@
 
 
 // (function(){
+    // initialise stage and other global variables
     var stage = document.getElementById('stage'),
         context = stage.getContext('2d'),
         quadtree;
@@ -219,6 +220,8 @@
     //     }
     // }
 
+    // Sprite object that, when initialised, creates and stores information on each sprite.
+
     var Sprite = function(name, image, x, y){
          this.name = name;
          this.image = image;
@@ -229,6 +232,8 @@
 
          this.init();
      }
+
+     // Each sprite has its own canvas and context. An external image is used in this case to draw pixels to the canvas
 
     Sprite.prototype = {
         init: function(){
@@ -241,22 +246,26 @@
         }
     };
 
-    var sprite = new Image();
+    var spriteImage = new Image();
 
-    sprite.onload = function(){
+    // The sprites aren't drawn to the canvas until the image has loaded. 
+
+    spriteImage.onload = function(){
 
         for(var i = 0; i < 10; i++){
-        	sprites.push(new Sprite('sprite' + i, sprite, parseInt(Math.random() * 400), parseInt(Math.random() * 400)));
+        	sprites.push(new Sprite('sprite' + i, spriteImage, parseInt(Math.random() * 400), parseInt(Math.random() * 400)));
         }
 
         drawSprites();
         quadtree = new Quadtree();
     }
 
-    sprite.src = 'img/sprite.png';
+    spriteImage.src = 'img/sprite.png';
+
+    // When the quad tree is initialised it immediately does the first level of subdivision. This creates the 'nodes' object that containes the data on each subdivision.
 
     function Quadtree(){
-        this.maxDepth = 1;
+        this.maxDepth = 2;
         this.currentDepth = 0;
         this.width = stage.width;
         this.height = stage.height;
@@ -267,6 +276,7 @@
     Quadtree.prototype = {
         nodes: {}
         , init: function(){
+            this.elements = sprites.slice(0);
             this.nodes[0] = {
                 depth: 0
                 , elements: []
@@ -355,6 +365,8 @@
 
                 }
             }
+
+            this.update(this.nodes);
 
             for(var i in this.nodes){
 
@@ -471,6 +483,7 @@
     
     function drawSprites(){
         for(var i in sprites){
+            context.globalCompositeOperation = 'source-over';
             context.drawImage(sprites[i].image, sprites[i].x, sprites[i].y);
         }
     }
