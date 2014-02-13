@@ -235,9 +235,12 @@ Mesh.prototype = {
         gl.attachShader(this.program, fshader);
         gl.linkProgram(this.program);
 
+
+        gl.useProgram(this.program);
+
         this.program.vertexPosAttrib = gl.getAttribLocation(this.program, 'aVertexPosition');
         gl.enableVertexAttribArray(this.program.vertexPosAttrib);
-        gl.vertexAttribPointer(this.program.vertexPosAttrib, this.itemSize, gl.FLOAT, false, 0, 0);
+        // gl.vertexAttribPointer(this.program.vertexPosAttrib, this.itemSize, gl.FLOAT, false, 0, 0);
 
         this.program.mvMatrixUniform = gl.getUniformLocation(this.program, "uMVMatrix");
         this.program.pMatrixUniform = gl.getUniformLocation(this.program, "uPMatrix");
@@ -247,7 +250,7 @@ Mesh.prototype = {
     }
 }
 
-var geebee = new Mesh(scene, 'geebee');
+var geebee = new Mesh(scene, 'cube');
 var geebee = new Mesh(scene, 'geebee');
 
 var initialTime = new Date().getTime();
@@ -268,6 +271,7 @@ function render(){
         gl.useProgram(scene.meshes[i].program);
 
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, scene.meshes[i].buffers.vertexIndex);
+        gl.vertexAttribPointer(scene.meshes[i].program.vertexPosAttrib, scene.meshes[i].itemSize, gl.FLOAT, false, 0, 0);
 
         gl.uniformMatrix4fv(scene.meshes[i].program.mvMatrixUniform, gl.FALSE, scene.meshes[i].mvMatrix);
         gl.uniformMatrix4fv(scene.meshes[i].program.pMatrixUniform, gl.FALSE, scene.pMatrix);
