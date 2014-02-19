@@ -136,13 +136,18 @@ Mesh.prototype = {
             vertexInfo = [],
             vertices = [],
             faceInfo = [],
-            faces = [];
+            faces = [],
+            textureInfo = [],
+            textureIndicies = [],
+            textureCoordinates = [];
 
         for(var i in lines){
-            if(lines[i].indexOf('v') === 0){
+            if(lines[i].indexOf('v ') === 0){
                 vertexInfo.push(lines[i]);
-            }else if(lines[i].indexOf('f') === 0){
+            }else if(lines[i].indexOf('f ') === 0){
                 faceInfo.push(lines[i]);
+            }else if(lines[i].indexOf('vt') === 0){
+                textureInfo.push(lines[i]);
             }
         }
 
@@ -156,12 +161,24 @@ Mesh.prototype = {
         for(var l in faceInfo){
             var splat = faceInfo[l].split(' ');
             for(var m = 1; m < splat.length; m++){
-                faces.push(splat[m] - 1);
+
+                var sploot = splat[m].split('/');
+                faces.push(sploot[0] - 1);
+                textureIndicies.push(sploot[1] - 1);
+            }
+        }
+
+        for(var n in textureInfo){
+            var splat = textureInfo[n].split(' ');
+            for(var o = 1; o < splat.length; o++){
+                textureCoordinates.push(splat[o]);
             }
         }
 
         this.mesh.vertices = vertices;
         this.mesh.faces = faces;
+        this.mesh.textureIndicies = textureIndicies;
+        this.mesh.textureCoordinates = textureCoordinates;
 
         this.buildMeshData();
 
@@ -214,6 +231,8 @@ Mesh.prototype = {
 
         gl.linkProgram(this.program);
 
+        this.program.vertexPosAttrib = gl.getAttribLocation(this.program, 'aVertexPosition');
+
         this.program.mvMatrixUniform = gl.getUniformLocation(this.program, "uMVMatrix");
         this.program.pMatrixUniform = gl.getUniformLocation(this.program, "uPMatrix");
         this.program.cameraOffset = gl.getUniformLocation(this.program, "uCameraOffset");
@@ -222,9 +241,11 @@ Mesh.prototype = {
     }
 }
 
-var propeller = new Mesh(scene, 'propeller');
-var geebee = new Mesh(scene, 'geebee');
-var ground = new Mesh(scene, 'ground');
+// var propeller = new Mesh(scene, 'propeller');
+// var geebee = new Mesh(scene, 'geebee');
+// var ground = new Mesh(scene, 'ground');
+var cube = new Mesh(scene, 'cube');
+// var cube2 = new Mesh(scene, 'cube2');
 
 var heading = [],
     bank = [],
@@ -343,37 +364,39 @@ function render(){
         }
     }
 
-    propellerAngularVelocity += 2;
+    // propellerAngularVelocity += 2;
 
-    mat4.identity(geebeeTranslate);
-    mat4.translate(geebeeTranslate, geebeeTranslate, [0.0, 0.0, -0.05]);
-    mat4.identity(geebeeTransform);
-    mat4.multiply(geebeeTransform, geebeeRotation, geebeeTranslate);
-    mat4.multiply(geebee.mvMatrix, geebee.mvMatrix, geebeeTransform);
+    // mat4.identity(geebeeTranslate);
+    // mat4.translate(geebeeTranslate, geebeeTranslate, [0.0, 0.0, -0.05]);
+    // mat4.identity(geebeeTransform);
+    // mat4.multiply(geebeeTransform, geebeeRotation, geebeeTranslate);
+    // mat4.multiply(geebee.mvMatrix, geebee.mvMatrix, geebeeTransform);
 
-    mat4.identity(propeller.mvMatrix);
-    mat4.identity(propellerTranslate);
-    mat4.identity(propellerRotation);
-    mat4.rotateZ(propellerRotation, propellerRotation, propellerAngularVelocity * (Math.PI / 180));
-    mat4.translate(propellerTranslate, propellerTranslate, [0, 0, -3.0]);
-    mat4.multiply(propellerTransform, propellerRotation, propellerTranslate);
-    mat4.multiply(propellerTransform, geebee.mvMatrix, propellerTransform);
-    mat4.multiply(propeller.mvMatrix, propeller.mvMatrix, propellerTransform);
+    // mat4.identity(propeller.mvMatrix);
+    // mat4.identity(propellerTranslate);
+    // mat4.identity(propellerRotation);
+    // mat4.rotateZ(propellerRotation, propellerRotation, propellerAngularVelocity * (Math.PI / 180));
+    // mat4.translate(propellerTranslate, propellerTranslate, [0, 0, -3.0]);
+    // mat4.multiply(propellerTransform, propellerRotation, propellerTranslate);
+    // mat4.multiply(propellerTransform, geebee.mvMatrix, propellerTransform);
+    // mat4.multiply(propeller.mvMatrix, propeller.mvMatrix, propellerTransform);
 
-    mat4.identity(scene.cameraOffset);
-    mat4.identity(cameraTranslate);
-    mat4.identity(cameraTransform);
-    mat4.translate(cameraTranslate, cameraTranslate, [0, 2.0, 10.0]);
-    mat4.multiply(cameraTransform, cameraTransform, cameraTranslate);
-    mat4.multiply(cameraTransform, geebee.mvMatrix, cameraTransform);
-    mat4.multiply(scene.cameraOffset, scene.cameraOffset, cameraTransform);
+    // mat4.identity(scene.cameraOffset);
+    // mat4.identity(cameraTranslate);
+    // mat4.identity(cameraTransform);
+    // mat4.translate(cameraTranslate, cameraTranslate, [0, 2.0, 10.0]);
+    // mat4.multiply(cameraTransform, cameraTransform, cameraTranslate);
+    // mat4.multiply(cameraTransform, geebee.mvMatrix, cameraTransform);
+    // mat4.multiply(scene.cameraOffset, scene.cameraOffset, cameraTransform);
 
-    mat4.invert(scene.cameraOffset, scene.cameraOffset);
+    // mat4.invert(scene.cameraOffset, scene.cameraOffset);
 
-    ground.mvMatrix.set(groundTranslate);
+    // ground.mvMatrix.set(groundTranslate);
 
 
     for(var i in scene.meshes){
+        mat4.identity(scene.meshes[i].mvMatrix);
+        mat4.translate(scene.meshes[i].mvMatrix, scene.meshes[i].mvMatrix, [0.0, (2.0 * i), -10]);
 
         gl.useProgram(scene.meshes[i].program);
         

@@ -22,22 +22,26 @@
 
 		<script type="x-shader/x-vertex" id="v-shader">
 			attribute vec3 aVertexPosition;
-			varying vec3 vTexCoord;
+			attribute vec2 aTextureCoordinates;
 
 			uniform mat4 uMVMatrix;
 			uniform mat4 uPMatrix;
 
+			varying vec2 vTextureCoordinates;
+
 			void main() {
-				vTexCoord = aVertexPosition + 0.5;
+				vTextureCoordinates = aTextureCoordinates;
 				gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1);
 			}
 		</script>
 
 		<script type="x-shader/x-shader" id="f-shader">
 			precision mediump float;
-			varying vec3 vTexCoord;
+			varying vec2 vTextureCoordinates;
+
+			uniform sampler2D uSampler;
 			void main() {
-				gl_FragColor = vec4(vTexCoord, 1);
+				gl_FragColor = texture2D(uSampler, vTextureCoordinates);
 			}
 		</script>
 

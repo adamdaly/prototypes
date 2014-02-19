@@ -28,13 +28,18 @@ function parseResponse(response){
         vertexInfo = [],
         vertices = [],
         faceInfo = [],
-        faces = [];
+        faces = [],
+        textureInfo = [],
+        textureIndicies = [],
+        textureCoordinates = [];
 
     for(var i in lines){
-        if(lines[i].indexOf('v') === 0){
+        if(lines[i].indexOf('v ') === 0){
             vertexInfo.push(lines[i]);
-        }else if(lines[i].indexOf('f') === 0){
+        }else if(lines[i].indexOf('f ') === 0){
             faceInfo.push(lines[i]);
+        }else if(lines[i].indexOf('vt') === 0){
+            textureInfo.push(lines[i]);
         }
     }
 
@@ -48,19 +53,30 @@ function parseResponse(response){
     for(var l in faceInfo){
         var splat = faceInfo[l].split(' ');
         for(var m = 1; m < splat.length; m++){
-            faces.push(splat[m] - 1);
+
+            var sploot = splat[m].split('/');
+            faces.push(sploot[0] - 1);
+            textureIndicies.push(sploot[1] - 1);
         }
     }
 
-    obj.faces = faces;
-    obj.vertices = vertices;
+    for(var n in textureInfo){
+        var splat = textureInfo[n].split(' ');
+        for(var o = 1; o < splat.length; o++){
+            textureCoordinates.push(splat[o]);
+        }
+    }
 
-    test = obj;
+    obj.vertices = vertices;
+    obj.faces = faces;
+    obj.textureIndicies = textureIndicies;
+    obj.textureCoordinates = textureCoordinates;
+
     return obj;
 }
 
 var request = new XMLHttpRequest(), response;
-request.open('GET', '/js/models/geebee.obj');
+request.open('GET', '/js/models/cube2.obj');
 
 
 request.onreadystatechange = function(){
@@ -148,7 +164,7 @@ function buildScene(obj){
     //     1.0, -1.0, 1.0
     // ];
 
-    // var vertices = obj.vertices;
+    // obj.vertices = vertices;
 
     vertexPositionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
@@ -180,13 +196,14 @@ function buildScene(obj){
     gl.enableVertexAttribArray(program.vertexPosAttrib);
     gl.vertexAttribPointer(program.vertexPosAttrib, vertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
+    program.textureCoordAttribute = gl.getAttribLocation(program, 'aTextureCoordinates');
+    gl.enableVertexAttribArray(program.textureCoordAttribute);
+    gl.vertexAttribPointer(program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
+
     program.pMatrixUniform = gl.getUniformLocation(program, "uPMatrix");
     program.mvMatrixUniform = gl.getUniformLocation(program, "uMVMatrix");
 
     gl.viewport(0, 0, stage.width, stage.height);
-
-    // gl.clearColor(0, 0, 0, 1);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     mat4.perspective(pMatrix, 120, stage.width / stage.height, 0.1, 100.0);
     mat4.identity(mvMatrix);
@@ -194,8 +211,8 @@ function buildScene(obj){
     mat4.translate(mvMatrix, mvMatrix, [0.0, 0.0, -10.0]);
 
 
-    gl.uniformMatrix4fv(program.pMatrixUniform, gl.FALSE, pMatrix);
-    gl.uniformMatrix4fv(program.mvMatrixUniform, gl.FALSE, mvMatrix);
+    gl.uniformMatrix4fv(program.pMatrixUniform, false, pMatrix);
+    gl.uniformMatrix4fv(program.mvMatrixUniform, false, mvMatrix);
 
     vertexIndexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexIndexBuffer);
@@ -207,9 +224,41 @@ function buildScene(obj){
     vertexIndexBuffer.itemSize = 1;
     vertexIndexBuffer.numItems = vertexIndices.length;
 
-    gl.drawElements(gl.TRIANGLES, vertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
 
-    tick();
+    //##################### TEXTURE
+
+    var texture = gl.createTexture();
+    var textureCoordinatesBuffer = gl.createBuffer();
+
+    textureSrc = new Image();
+    textureSrc.onload = function(){
+
+        gl.activeTexture(gl.TEXTURE0);
+        
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureSrc);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordinatesBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(obj.textureCoordinates), gl.STATIC_DRAW);
+
+        gl.vertexAttribPointer(program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
+
+        // var textureIndiciesBuffer = gl.createBuffer();
+        // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, textureIndiciesBuffer);
+        // gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(obj.textureIndicies), gl.STATIC_DRAW);
+
+        gl.uniform1i(gl.getUniformLocation(program, "uSampler"), 0);
+
+        tick();
+
+    }
+
+    textureSrc.src = '/img/cube-diffuse.png';
+
 }
 
 
@@ -321,7 +370,7 @@ function tick(){
 
     mat4.multiply(mvMatrix, mvMatrix, transform);
 
-    gl.uniformMatrix4fv(program.mvMatrixUniform, gl.FALSE, mvMatrix);
+    gl.uniformMatrix4fv(program.mvMatrixUniform, false, mvMatrix);
 
     // gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexPositionBuffer.numItems);
     gl.drawElements(gl.TRIANGLES, vertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
