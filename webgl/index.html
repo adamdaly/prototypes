@@ -24,10 +24,10 @@
 			attribute vec3 aVertexPosition;
 			attribute vec2 aTextureCoordinates;
 
+			varying vec2 vTextureCoordinates;
+
 			uniform mat4 uMVMatrix;
 			uniform mat4 uPMatrix;
-
-			varying vec2 vTextureCoordinates;
 
 			void main() {
 				vTextureCoordinates = aTextureCoordinates;
@@ -37,11 +37,13 @@
 
 		<script type="x-shader/x-shader" id="f-shader">
 			precision mediump float;
+
 			varying vec2 vTextureCoordinates;
 
 			uniform sampler2D uSampler;
+
 			void main() {
-				gl_FragColor = texture2D(uSampler, vTextureCoordinates);
+				gl_FragColor = texture2D(uSampler, vec2(vTextureCoordinates.s, vTextureCoordinates.t));
 			}
 		</script>
 

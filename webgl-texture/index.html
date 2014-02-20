@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+
+		<canvas id="stage" width="400" height="400"></canvas>
+
+		<script type="x-shader/x-vertex" id="v-shader">
+			attribute vec3 aVertexPosition;
+      		attribute vec2 aTextureCoordinates;
+
+			varying vec2 vTextureCoordinates;
+
+			uniform mat4 uMVMatrix;
+			uniform mat4 uPMatrix;
+			uniform mat4 uCameraOffset;
+
+			void main() {
+				vTextureCoordinates = aTextureCoordinates;
+				gl_Position = uPMatrix * uCameraOffset * uMVMatrix * vec4(aVertexPosition, 1);
+			}
+		</script>
+
+		<script type="x-shader/x-shader" id="f-shader">
+			precision mediump float;
+			varying vec2 vTextureCoordinates;
+
+			uniform sampler2D uSampler;
+			void main() {
+				gl_FragColor = texture2D(uSampler, vec2(vTextureCoordinates.s, vTextureCoordinates.t));
+			}
+		</script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="js/vendor/three.min.js"></script>
+		<script src="js/vendor/webgl-debug.js"></script>
+		<script src="js/vendor/gl-matrix.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		
+	</body>
+</html>

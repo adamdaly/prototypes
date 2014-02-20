@@ -30,6 +30,7 @@ function parseResponse(response){
         faceInfo = [],
         faces = [],
         textureInfo = [],
+        textureVertex = [],
         textureIndicies = [],
         textureCoordinates = [];
 
@@ -62,16 +63,20 @@ function parseResponse(response){
 
     for(var n in textureInfo){
         var splat = textureInfo[n].split(' ');
-        for(var o = 1; o < splat.length; o++){
-            textureCoordinates.push(splat[o]);
-        }
+
+        textureVertex.push([splat[1], splat[2]]);
+
+    }
+
+    for(var o in textureIndicies){
+        textureCoordinates = textureCoordinates.concat(textureVertex[textureIndicies[o]]);
     }
 
     obj.vertices = vertices;
     obj.faces = faces;
-    obj.textureIndicies = textureIndicies;
     obj.textureCoordinates = textureCoordinates;
 
+    test = obj;
     return obj;
 }
 
@@ -82,7 +87,6 @@ request.open('GET', '/js/models/cube2.obj');
 request.onreadystatechange = function(){
     if(request.readyState === 4){
         buildScene(parseResponse(request.responseText));
-        // buildScene(JSON.parse(request.responseText));
     }
 }
 
@@ -91,80 +95,13 @@ request.send();
 var program,
     vertexPositionBuffer,
     vertexIndexBuffer,
+    texture,
+    textureBuffer,
     transform = mat4.create(),
     rotation = mat4.create(),
     translate = mat4.create();
 
 function buildScene(obj){
-
-    // cube
-    // var vertices = [
-    //     // Front face
-    //     -1.0, -1.0,  1.0,
-    //      1.0, -1.0,  1.0,
-    //      1.0,  1.0,  1.0,
-    //     -1.0,  1.0,  1.0,
-        
-    //     // Back face
-    //     -1.0, -1.0, -1.0,
-    //     -1.0,  1.0, -1.0,
-    //      1.0,  1.0, -1.0,
-    //      1.0, -1.0, -1.0,
-        
-    //     // Top face
-    //     -1.0,  1.0, -1.0,
-    //     -1.0,  1.0,  1.0,
-    //      1.0,  1.0,  1.0,
-    //      1.0,  1.0, -1.0,
-        
-    //     // Bottom face
-    //     -1.0, -1.0, -1.0,
-    //      1.0, -1.0, -1.0,
-    //      1.0, -1.0,  1.0,
-    //     -1.0, -1.0,  1.0,
-        
-    //     // Right face
-    //      1.0, -1.0, -1.0,
-    //      1.0,  1.0, -1.0,
-    //      1.0,  1.0,  1.0,
-    //      1.0, -1.0,  1.0,
-        
-    //     // Left face
-    //     -1.0, -1.0, -1.0,
-    //     -1.0, -1.0,  1.0,
-    //     -1.0,  1.0,  1.0,
-    //     -1.0,  1.0, -1.0
-    // ];
-
-
-    // pyramid
-    // var vertices = [
-    //     0.0, 1.0, 0.0,
-    //     1.0, -1.0, 1.0,
-    //     1.0, -1.0, -1.0,
-
-    //     0.0, 1.0, 0.0,
-    //     1.0, -1.0, -1.0,
-    //     -1.0, -1.0, -1.0,
-
-    //     0.0, 1.0, 0.0,
-    //     -1.0, -1.0, -1.0,
-    //     -1.0, -1.0, 1.0,
-
-    //     0.0, 1.0, 0.0, 
-    //     -1.0, -1.0, 1.0, 
-    //     1.0, -1.0, 1.0,
-
-    //     1.0, -1.0, 1.0, 
-    //     1.0, -1.0, -1.0, 
-    //     -1.0, -1.0, -1.0, 
-
-    //     -1.0, -1.0, -1.0, 
-    //     -1.0, -1.0, 1.0, 
-    //     1.0, -1.0, 1.0
-    // ];
-
-    // obj.vertices = vertices;
 
     vertexPositionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
@@ -194,16 +131,21 @@ function buildScene(obj){
 
     program.vertexPosAttrib = gl.getAttribLocation(program, 'aVertexPosition');
     gl.enableVertexAttribArray(program.vertexPosAttrib);
-    gl.vertexAttribPointer(program.vertexPosAttrib, vertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    // gl.vertexAttribPointer(program.vertexPosAttrib, 3, gl.FLOAT, false, 0, 0);
 
-    program.textureCoordAttribute = gl.getAttribLocation(program, 'aTextureCoordinates');
-    gl.enableVertexAttribArray(program.textureCoordAttribute);
-    gl.vertexAttribPointer(program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
+
+    program.textureCoordinates = gl.getAttribLocation(program, 'aTextureCoordinates');
+    gl.enableVertexAttribArray(program.textureCoordinates);
+    // gl.vertexAttribPointer(program.textureCoordinates, 2, gl.FLOAT, false, 0, 0);
 
     program.pMatrixUniform = gl.getUniformLocation(program, "uPMatrix");
     program.mvMatrixUniform = gl.getUniformLocation(program, "uMVMatrix");
+    program.textureSampler = gl.getUniformLocation(program, 'uSampler');
 
     gl.viewport(0, 0, stage.width, stage.height);
+
+    // gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     mat4.perspective(pMatrix, 120, stage.width / stage.height, 0.1, 100.0);
     mat4.identity(mvMatrix);
@@ -211,54 +153,33 @@ function buildScene(obj){
     mat4.translate(mvMatrix, mvMatrix, [0.0, 0.0, -10.0]);
 
 
-    gl.uniformMatrix4fv(program.pMatrixUniform, false, pMatrix);
-    gl.uniformMatrix4fv(program.mvMatrixUniform, false, mvMatrix);
+    gl.uniformMatrix4fv(program.pMatrixUniform, gl.FALSE, pMatrix);
+    gl.uniformMatrix4fv(program.mvMatrixUniform, gl.FALSE, mvMatrix);
 
     vertexIndexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexIndexBuffer);
-
-    var vertexIndices = obj.faces;
-
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(vertexIndices), gl.STATIC_DRAW);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(obj.faces), gl.STATIC_DRAW);
     
     vertexIndexBuffer.itemSize = 1;
-    vertexIndexBuffer.numItems = vertexIndices.length;
+    vertexIndexBuffer.numItems = obj.faces.length;
 
+    texture = gl.createTexture();
 
-    //##################### TEXTURE
+    textureBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, textureBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(obj.textureCoordinates), gl.STATIC_DRAW);
 
-    var texture = gl.createTexture();
-    var textureCoordinatesBuffer = gl.createBuffer();
+    var textureSrc = new Image();
 
-    textureSrc = new Image();
-    textureSrc.onload = function(){
-
-        gl.activeTexture(gl.TEXTURE0);
-        
+    textureSrc.addEventListener('load', function(){
         gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureSrc);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
         gl.generateMipmap(gl.TEXTURE_2D);
 
-        gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordinatesBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(obj.textureCoordinates), gl.STATIC_DRAW);
-
-        gl.vertexAttribPointer(program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
-
-        // var textureIndiciesBuffer = gl.createBuffer();
-        // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, textureIndiciesBuffer);
-        // gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(obj.textureIndicies), gl.STATIC_DRAW);
-
-        gl.uniform1i(gl.getUniformLocation(program, "uSampler"), 0);
-
         tick();
+    }, false);
 
-    }
-
-    textureSrc.src = '/img/cube-diffuse.png';
-
+    textureSrc.src = '/img/uv-map.jpg';
 }
 
 
@@ -363,16 +284,28 @@ function tick(){
     }
 
     mat4.identity(translate);
-    mat4.translate(translate, translate, [0.0, 0.0, -0.01]);
+    // mat4.translate(translate, translate, [0.0, 0.0, -0.01]);
 
     mat4.identity(transform);
     mat4.multiply(transform, rotation, translate);
 
     mat4.multiply(mvMatrix, mvMatrix, transform);
 
-    gl.uniformMatrix4fv(program.mvMatrixUniform, false, mvMatrix);
 
-    // gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexPositionBuffer.numItems);
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+    gl.vertexAttribPointer(program.vertexPosAttrib, 3, gl.FLOAT, false, 0, 0);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, textureBuffer);
+    gl.vertexAttribPointer(program.textureCoordinates, 2, gl.FLOAT, false, 0, 0);
+
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.uniform1i(program.uSampler, 0);
+
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexIndexBuffer);
+
+
+    gl.uniformMatrix4fv(program.mvMatrixUniform, gl.FALSE, mvMatrix);
+
     gl.drawElements(gl.TRIANGLES, vertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
 
     requestAnimationFrame(tick);

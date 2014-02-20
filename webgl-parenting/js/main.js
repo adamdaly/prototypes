@@ -244,8 +244,8 @@ Mesh.prototype = {
 // var propeller = new Mesh(scene, 'propeller');
 // var geebee = new Mesh(scene, 'geebee');
 // var ground = new Mesh(scene, 'ground');
-var cube = new Mesh(scene, 'cube');
-// var cube2 = new Mesh(scene, 'cube2');
+// var cube = new Mesh(scene, 'cube');
+var cube2 = new Mesh(scene, 'cube2');
 
 var heading = [],
     bank = [],
