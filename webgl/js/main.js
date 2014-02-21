@@ -24,6 +24,7 @@ var test;
 
 function parseResponse(response){
     var lines = response.split('\n'),
+        splat,
         obj = {},
         vertexInfo = [],
         vertices = [],
@@ -34,43 +35,51 @@ function parseResponse(response){
         textureIndicies = [],
         textureCoordinates = [];
 
-    for(var i in lines){
-        if(lines[i].indexOf('v ') === 0){
-            vertexInfo.push(lines[i]);
-        }else if(lines[i].indexOf('f ') === 0){
-            faceInfo.push(lines[i]);
-        }else if(lines[i].indexOf('vt') === 0){
-            textureInfo.push(lines[i]);
+    for(var i0 in lines){
+        if(lines[i0].indexOf('v ') === 0){
+            vertexInfo.push(lines[i0]);
+        }else if(lines[i0].indexOf('f ') === 0){
+            faceInfo.push(lines[i0]);
+        }else if(lines[i0].indexOf('vt') === 0){
+            textureInfo.push(lines[i0]);
         }
     }
 
-    for(var j in vertexInfo){
-        var splat = vertexInfo[j].split(' ');
-        for(var k = 1; k < splat.length; k++){
-            vertices.push(splat[k]);
+    for(var i1 in vertexInfo){
+        splat = vertexInfo[i1].split(' ');
+        for(var i2 = 1; i2 < splat.length; i2++){
+            vertices.push(splat[i2]);
         }
     }
 
-    for(var l in faceInfo){
-        var splat = faceInfo[l].split(' ');
-        for(var m = 1; m < splat.length; m++){
+    for(var i3 in textureInfo){
+        splat = textureInfo[i3].split(' ');
+        for(var i4 = 1; i4 < splat.length; i4++){
+            textureVertex.push(splat[i4]);
+        }
+    }
 
-            var sploot = splat[m].split('/');
+    for(var i5 in faceInfo){
+        var splat = faceInfo[i5].split(' ');
+        for(var i6 = 1; i6 < splat.length; i6++){
+
+            var sploot = splat[i6].split('/');
             faces.push(sploot[0] - 1);
-            textureIndicies.push(sploot[1] - 1);
+            textureCoordinates[parseInt(sploot[0] - 1) * 2] = textureVertex[parseInt(sploot[1] - 1) * 2];// x
+            textureCoordinates[parseInt(sploot[0] - 1) * 2 + 1] = textureVertex[parseInt(sploot[1] - 1) * 2 + 1];// y
         }
     }
 
-    for(var n in textureInfo){
-        var splat = textureInfo[n].split(' ');
+    // for(var n in textureInfo){
+    //     var splat = textureInfo[n].split(' ');
 
-        textureVertex.push([splat[1], splat[2]]);
+    //     textureVertex.push([splat[1], splat[2]]);
 
-    }
+    // }
 
-    for(var o in textureIndicies){
-        textureCoordinates = textureCoordinates.concat(textureVertex[textureIndicies[o]]);
-    }
+    // for(var o in textureIndicies){
+    //     textureCoordinates = textureCoordinates.concat(textureVertex[textureIndicies[o]]);
+    // }
 
     obj.vertices = vertices;
     obj.faces = faces;
@@ -81,7 +90,7 @@ function parseResponse(response){
 }
 
 var request = new XMLHttpRequest(), response;
-request.open('GET', '/js/models/cube2.obj');
+request.open('GET', '/js/models/geebee.obj');
 
 
 request.onreadystatechange = function(){
@@ -173,13 +182,14 @@ function buildScene(obj){
 
     textureSrc.addEventListener('load', function(){
         gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureSrc);
         gl.generateMipmap(gl.TEXTURE_2D);
 
         tick();
     }, false);
 
-    textureSrc.src = '/img/uv-map.jpg';
+    textureSrc.src = '/img/geebee-diffuse.png';
 }
 
 
@@ -284,7 +294,7 @@ function tick(){
     }
 
     mat4.identity(translate);
-    // mat4.translate(translate, translate, [0.0, 0.0, -0.01]);
+    mat4.translate(translate, translate, [0.0, 0.0, -0.05]);
 
     mat4.identity(transform);
     mat4.multiply(transform, rotation, translate);
