@@ -1,0 +1,972 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'logfmt', '--save' ]
+2 info using npm@1.2.21
+3 info using node@v0.10.7
+4 verbose read json /Library/WebServer/Documents/prototypes/heroku/package.json
+5 warn package.json heruko@0.0.0 No repository field.
+6 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/express/package.json
+7 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/grunt/package.json
+8 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/grunt-contrib-sass/package.json
+9 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/grunt-contrib-watch/package.json
+10 verbose from cache /Library/WebServer/Documents/prototypes/heroku/package.json
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'logfmt', null ]
+13 verbose cache add name=undefined spec="logfmt" args=["logfmt",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'logfmt',
+14 verbose parsed url   path: 'logfmt',
+14 verbose parsed url   href: 'logfmt' }
+15 silly lockFile d7e86a42-logfmt logfmt
+16 verbose lock logfmt /Users/rehabstudio/.npm/d7e86a42-logfmt.lock
+17 silly lockFile d7e86a42-logfmt logfmt
+18 silly lockFile d7e86a42-logfmt logfmt
+19 verbose addNamed [ 'logfmt', '' ]
+20 verbose addNamed [ null, '' ]
+21 silly lockFile 52bb2a69-logfmt logfmt@
+22 verbose lock logfmt@ /Users/rehabstudio/.npm/52bb2a69-logfmt.lock
+23 silly addNameRange { name: 'logfmt', range: '', hasData: false }
+24 verbose url raw logfmt
+25 verbose url resolving [ 'https://registry.npmjs.org/', './logfmt' ]
+26 verbose url resolved https://registry.npmjs.org/logfmt
+27 info trying registry request attempt 1 at 16:06:33
+28 http GET https://registry.npmjs.org/logfmt
+29 http 200 https://registry.npmjs.org/logfmt
+30 silly registry.get cb [ 200,
+30 silly registry.get   { date: 'Tue, 15 Apr 2014 15:07:35 GMT',
+30 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+30 silly registry.get     etag: '"5E5CLTG1IZ5X8Z1OEKJBVCYLN"',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     'cache-control': 'max-age=1',
+30 silly registry.get     'content-length': '44871',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     age: '84',
+30 silly registry.get     'x-served-by': 'cache-v42-ASH, cache-am69-AMS',
+30 silly registry.get     'x-cache': 'MISS, MISS',
+30 silly registry.get     'x-cache-hits': '0, 0',
+30 silly registry.get     'x-timer': 'S1397574455.327686310,VS0,VS-3,VE89,VE178',
+30 silly registry.get     vary: 'Accept',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 silly addNameRange number 2 { name: 'logfmt', range: '', hasData: true }
+32 silly addNameRange versions [ 'logfmt',
+32 silly addNameRange   [ '0.1.0',
+32 silly addNameRange     '0.2.0',
+32 silly addNameRange     '0.3.0',
+32 silly addNameRange     '0.3.1',
+32 silly addNameRange     '0.4.0',
+32 silly addNameRange     '0.5.0',
+32 silly addNameRange     '0.5.1',
+32 silly addNameRange     '0.6.0',
+32 silly addNameRange     '0.9.0',
+32 silly addNameRange     '0.9.1',
+32 silly addNameRange     '0.9.2',
+32 silly addNameRange     '0.10.0',
+32 silly addNameRange     '0.11.0',
+32 silly addNameRange     '0.11.1',
+32 silly addNameRange     '0.12.0',
+32 silly addNameRange     '0.13.0',
+32 silly addNameRange     '0.13.1',
+32 silly addNameRange     '0.14.0',
+32 silly addNameRange     '0.14.1',
+32 silly addNameRange     '0.15.0',
+32 silly addNameRange     '0.16.0',
+32 silly addNameRange     '0.17.0',
+32 silly addNameRange     '0.18.0',
+32 silly addNameRange     '0.18.1',
+32 silly addNameRange     '0.19.0',
+32 silly addNameRange     '0.20.0',
+32 silly addNameRange     '0.21.0',
+32 silly addNameRange     '0.22.0',
+32 silly addNameRange     '0.23.0',
+32 silly addNameRange     '1.0.0-pre',
+32 silly addNameRange     '1.0.0-pre2',
+32 silly addNameRange     '1.0.0-pre3',
+32 silly addNameRange     '1.0.0',
+32 silly addNameRange     '1.1.1',
+32 silly addNameRange     '1.1.2' ] ]
+33 verbose addNamed [ 'logfmt', '1.1.2' ]
+34 verbose addNamed [ '1.1.2', '1.1.2' ]
+35 silly lockFile 150a4829-logfmt-1-1-2 logfmt@1.1.2
+36 verbose lock logfmt@1.1.2 /Users/rehabstudio/.npm/150a4829-logfmt-1-1-2.lock
+37 silly lockFile 086e03e3-pmjs-org-logfmt-logfmt-1-1-2-tgz https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz
+38 verbose lock https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz /Users/rehabstudio/.npm/086e03e3-pmjs-org-logfmt-logfmt-1-1-2-tgz.lock
+39 verbose addRemoteTarball [ 'https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz',
+39 verbose addRemoteTarball   '2e39cd575b546e9e6ae586754263b7d26d4233b3' ]
+40 info retry fetch attempt 1 at 16:06:34
+41 verbose fetch to= /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz
+42 http GET https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz
+43 http 200 https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz
+44 verbose tar unpack /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz
+45 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+46 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package /Users/rehabstudio/.npm/c937f9e8-94046-0-7391150677576661-package.lock
+47 silly lockFile b37f4bb8-94046-0-7391150677576661-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz
+48 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz /Users/rehabstudio/.npm/b37f4bb8-94046-0-7391150677576661-tmp-tgz.lock
+49 silly gunzTarPerm modes [ '755', '644' ]
+50 silly gunzTarPerm extractEntry package.json
+51 silly gunzTarPerm extractEntry .npmignore
+52 silly gunzTarPerm extractEntry README.md
+53 silly gunzTarPerm extractEntry logfmt.js
+54 silly gunzTarPerm extractEntry .travis.yml
+55 silly gunzTarPerm extractEntry bin/logfmt
+56 silly gunzTarPerm extractEntry examples/express_buffered.js
+57 silly gunzTarPerm extractEntry examples/express_readable.js
+58 silly gunzTarPerm extractEntry examples/two_streams.js
+59 silly gunzTarPerm extractEntry examples/https.js
+60 silly gunzTarPerm extractEntry examples/express_pipe_to_stdout.js
+61 silly gunzTarPerm extractEntry examples/post_to_express.js
+62 silly gunzTarPerm extractEntry examples/through.js
+63 silly gunzTarPerm extractEntry examples/simple_cmd.js
+64 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout2.js
+65 silly gunzTarPerm extractEntry examples/express_mime.js
+66 silly gunzTarPerm extractEntry examples/express_pipe.js
+67 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout.js
+68 silly gunzTarPerm extractEntry examples/timed_log.js
+69 silly gunzTarPerm extractEntry examples/vanilla_http.js
+70 silly gunzTarPerm extractEntry examples/restify_buffered.js
+71 silly gunzTarPerm extractEntry examples/r14.logfmt
+72 silly gunzTarPerm extractEntry examples/speed.sh
+73 silly gunzTarPerm extractEntry examples/test_cmd_line
+74 silly gunzTarPerm extractEntry examples/test_express
+75 silly gunzTarPerm extractEntry examples/quick.sh
+76 silly gunzTarPerm extractEntry examples/test_log
+77 silly gunzTarPerm extractEntry examples/post_via_curl
+78 silly gunzTarPerm extractEntry examples/post_form
+79 silly gunzTarPerm extractEntry examples/file
+80 silly gunzTarPerm extractEntry examples/test_express_readable
+81 silly gunzTarPerm extractEntry lib/body_parser.js
+82 silly gunzTarPerm extractEntry lib/body_parser_stream.js
+83 silly gunzTarPerm extractEntry lib/logfmt_parser.js
+84 silly gunzTarPerm extractEntry lib/logger.js
+85 silly gunzTarPerm extractEntry lib/request_logger.js
+86 silly gunzTarPerm extractEntry lib/streaming.js
+87 silly gunzTarPerm extractEntry lib/stringify.js
+88 silly gunzTarPerm extractEntry test/body_parser_stream_test.js
+89 silly gunzTarPerm extractEntry test/stringify_test.js
+90 silly gunzTarPerm extractEntry test/namespace_test.js
+91 silly gunzTarPerm extractEntry test/namespace_time.js
+92 silly gunzTarPerm extractEntry test/logging_tests.js
+93 silly gunzTarPerm extractEntry test/body_parser_test.js
+94 silly gunzTarPerm extractEntry test/parser_tests.js
+95 silly gunzTarPerm extractEntry test/request_logger_test.js
+96 silly gunzTarPerm extractEntry test/roundtrip_tests.js
+97 silly gunzTarPerm extractEntry test/singleton_test.js
+98 silly gunzTarPerm extractEntry test/log_time.js
+99 silly gunzTarPerm extractEntry test/stream_parser_test.js
+100 silly gunzTarPerm extractEntry test/error_tests.js
+101 silly gunzTarPerm extractEntry test/stream_stringify_test.js
+102 silly gunzTarPerm extractEntry test/new_logfmt.js
+103 silly gunzTarPerm extractEntry test/through_test.js
+104 silly gunzTarPerm extractEntry test/outstream.js
+105 silly gunzTarPerm extractEntry test/mocha.opts
+106 verbose read json /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package/package.json
+107 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+108 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+109 silly lockFile b37f4bb8-94046-0-7391150677576661-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz
+110 silly lockFile b37f4bb8-94046-0-7391150677576661-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/tmp.tgz
+111 verbose from cache /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package/package.json
+112 verbose tar pack [ '/Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz',
+112 verbose tar pack   '/var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package' ]
+113 verbose tarball /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+114 verbose folder /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+115 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+116 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package /Users/rehabstudio/.npm/c937f9e8-94046-0-7391150677576661-package.lock
+117 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+118 verbose lock /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz /Users/rehabstudio/.npm/365f0c69-dio-npm-logfmt-1-1-2-package-tgz.lock
+119 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+120 silly lockFile c937f9e8-94046-0-7391150677576661-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574394046-0.7391150677576661/package
+121 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+122 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+123 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+124 verbose lock /Users/rehabstudio/.npm/logfmt/1.1.2/package /Users/rehabstudio/.npm/fbbffaa9-bstudio-npm-logfmt-1-1-2-package.lock
+125 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+126 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+127 verbose tar unpack /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+128 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+129 verbose lock /Users/rehabstudio/.npm/logfmt/1.1.2/package /Users/rehabstudio/.npm/fbbffaa9-bstudio-npm-logfmt-1-1-2-package.lock
+130 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+131 verbose lock /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz /Users/rehabstudio/.npm/365f0c69-dio-npm-logfmt-1-1-2-package-tgz.lock
+132 silly gunzTarPerm modes [ '755', '644' ]
+133 silly gunzTarPerm extractEntry package.json
+134 silly gunzTarPerm extractEntry .npmignore
+135 silly gunzTarPerm extractEntry README.md
+136 silly gunzTarPerm extractEntry logfmt.js
+137 silly gunzTarPerm extractEntry .travis.yml
+138 silly gunzTarPerm extractEntry bin/logfmt
+139 silly gunzTarPerm extractEntry examples/express_buffered.js
+140 silly gunzTarPerm extractEntry examples/express_readable.js
+141 silly gunzTarPerm extractEntry examples/two_streams.js
+142 silly gunzTarPerm extractEntry examples/https.js
+143 silly gunzTarPerm extractEntry examples/express_pipe_to_stdout.js
+144 silly gunzTarPerm extractEntry examples/post_to_express.js
+145 silly gunzTarPerm extractEntry examples/through.js
+146 silly gunzTarPerm extractEntry examples/simple_cmd.js
+147 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout2.js
+148 silly gunzTarPerm extractEntry examples/express_mime.js
+149 silly gunzTarPerm extractEntry examples/express_pipe.js
+150 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout.js
+151 silly gunzTarPerm extractEntry examples/timed_log.js
+152 silly gunzTarPerm extractEntry examples/vanilla_http.js
+153 silly gunzTarPerm extractEntry examples/restify_buffered.js
+154 silly gunzTarPerm extractEntry examples/r14.logfmt
+155 silly gunzTarPerm extractEntry examples/speed.sh
+156 silly gunzTarPerm extractEntry examples/test_cmd_line
+157 silly gunzTarPerm extractEntry examples/test_express
+158 silly gunzTarPerm extractEntry examples/quick.sh
+159 silly gunzTarPerm extractEntry examples/test_log
+160 silly gunzTarPerm extractEntry examples/post_via_curl
+161 silly gunzTarPerm extractEntry examples/post_form
+162 silly gunzTarPerm extractEntry examples/file
+163 silly gunzTarPerm extractEntry examples/test_express_readable
+164 silly gunzTarPerm extractEntry lib/body_parser.js
+165 silly gunzTarPerm extractEntry lib/body_parser_stream.js
+166 silly gunzTarPerm extractEntry lib/logfmt_parser.js
+167 silly gunzTarPerm extractEntry lib/logger.js
+168 silly gunzTarPerm extractEntry lib/request_logger.js
+169 silly gunzTarPerm extractEntry lib/streaming.js
+170 silly gunzTarPerm extractEntry lib/stringify.js
+171 silly gunzTarPerm extractEntry test/body_parser_stream_test.js
+172 silly gunzTarPerm extractEntry test/stringify_test.js
+173 silly gunzTarPerm extractEntry test/namespace_test.js
+174 silly gunzTarPerm extractEntry test/namespace_time.js
+175 silly gunzTarPerm extractEntry test/logging_tests.js
+176 silly gunzTarPerm extractEntry test/body_parser_test.js
+177 silly gunzTarPerm extractEntry test/parser_tests.js
+178 silly gunzTarPerm extractEntry test/request_logger_test.js
+179 silly gunzTarPerm extractEntry test/roundtrip_tests.js
+180 silly gunzTarPerm extractEntry test/singleton_test.js
+181 silly gunzTarPerm extractEntry test/log_time.js
+182 silly gunzTarPerm extractEntry test/stream_parser_test.js
+183 silly gunzTarPerm extractEntry test/error_tests.js
+184 silly gunzTarPerm extractEntry test/stream_stringify_test.js
+185 silly gunzTarPerm extractEntry test/new_logfmt.js
+186 silly gunzTarPerm extractEntry test/through_test.js
+187 silly gunzTarPerm extractEntry test/outstream.js
+188 silly gunzTarPerm extractEntry test/mocha.opts
+189 verbose read json /Users/rehabstudio/.npm/logfmt/1.1.2/package/package.json
+190 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+191 silly lockFile fbbffaa9-bstudio-npm-logfmt-1-1-2-package /Users/rehabstudio/.npm/logfmt/1.1.2/package
+192 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+193 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+194 verbose from cache /Users/rehabstudio/.npm/logfmt/1.1.2/package/package.json
+195 verbose chmod /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz 644
+196 verbose chown /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz [ 501, 20 ]
+197 silly lockFile 086e03e3-pmjs-org-logfmt-logfmt-1-1-2-tgz https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz
+198 silly lockFile 086e03e3-pmjs-org-logfmt-logfmt-1-1-2-tgz https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz
+199 silly lockFile 150a4829-logfmt-1-1-2 logfmt@1.1.2
+200 silly lockFile 150a4829-logfmt-1-1-2 logfmt@1.1.2
+201 silly lockFile 52bb2a69-logfmt logfmt@
+202 silly lockFile 52bb2a69-logfmt logfmt@
+203 silly resolved [ { name: 'logfmt',
+203 silly resolved     version: '1.1.2',
+203 silly resolved     description: 'key=value logger and parser',
+203 silly resolved     main: 'logfmt.js',
+203 silly resolved     scripts: { test: 'mocha' },
+203 silly resolved     bin: { logfmt: './bin/logfmt' },
+203 silly resolved     dependencies: { split: '0.2.x', through: '2.3.x', lodash: '~2.4.1' },
+203 silly resolved     devDependencies: { express: '3.3.x', mocha: '*', restify: '*' },
+203 silly resolved     repository: { type: 'git', url: 'https://github.com/csquared/node-logfmt' },
+203 silly resolved     keywords: [ 'log', 'parser', 'logfmt' ],
+203 silly resolved     author: { name: 'csquared' },
+203 silly resolved     license: 'MIT',
+203 silly resolved     readme: '# node-logfmt\n\n[![Build Status](https://travis-ci.org/csquared/node-logfmt.png)](https://travis-ci.org/csquared/node-logfmt)\n\n\n"logfmt" is the name for a [key value logging convention](https://github.com/kr/logfmt) we\'ve adopted at Heroku.\n\nThis library is for both converting lines in logfmt format to objects and\nfor logging objects to a stream in logfmt format.\n\nIt provides a logfmt parser, logfmt stringifier, a logging facility,\nand both streaming and non-streaming body parsers for express and restify.\n\nYou should use this library if you\'re trying to write structured logs or\nif you\'re consuming them (especially if you\'re writing a logplex drain).\n\n## install\n\n    npm install logfmt\n\n# use\n\n## node.js\n\nThe `logfmt` module is a singleton that works directly from require.\n\n```javascript\nvar logfmt = require(\'logfmt\');\n\nlogfmt.stringify({foo: \'bar\'});\n// \'foo=bar\'\n\nlogfmt.parse(\'foo=bar\');\n// {foo: \'bar\'}\n```\n\nIt is also a constructor function, so you can use `new logfmt` to create\na new `logfmt` that you can configure differently.\n\n```javascript\nvar logfmt2 = new logfmt;\n\n// replace our stringify with JSON\'s\nlogfmt2.stringify = JSON.stringify\n\n// now we log JSON!\nlogfmt2.log({foo: \'bar\'})\n// {"foo":"bar"}\n\n// and the original logfmt is untouched\nlogfmt.log({foo: \'bar\'})\n// foo=bar\n```\n\n## command line\n\n### logfmt\n\naccepts lines on STDIN and converts them to json\n\n\n    > echo "foo=bar a=14 baz=\\"hello kitty\\" cool%story=bro f %^asdf" | logfmt\n    { "foo": "bar", "a": 14, "baz": "hello kitty", "cool%story": "bro", "f": true, "%^asdf": true }\n\n### logfmt -r (reverse)\n\naccepts JSON on STDIN and converts them to logfmt\n\n    > echo \'{ "foo": "bar", "a": 14, "baz": "hello kitty", \\\n    "cool%story": "bro", "f": true, "%^asdf": true }\' | logfmt -r\n    foo=bar a=14 baz="hello kitty" cool%story=bro f=true %^asdf=true\n\nround trips for free!\n\n    > echo "foo=bar a=14 baz=\\"hello kitty\\" cool%story=bro f %^asdf" | logfmt | logfmt -r | logfmt\n    { "foo": "bar", "a": 14, "baz": "hello kitty", "cool%story": "bro", "f": true, "%^asdf": true }\n\n\n# API\n\n## stringifying\n\nSerialize an object to logfmt format\n\n### `logfmt.stringify(object)`\n\nSerializes a single object.\n\n```javascript\nlogfmt.stringify({foo: "bar", a: 14, baz: \'hello kitty\'})\n//> \'foo=bar a=14 baz="hello kitty"\'\n```\n\n## parsing\n\nParse a line in logfmt format\n\n### `logfmt.parse(string)`\n\n```javascript\nlogfmt.parse("foo=bar a=14 baz=\\"hello kitty\\" cool%story=bro f %^asdf code=H12")\n//> { "foo": "bar", "a": \'14\', "baz": "hello kitty", "cool%story": "bro", "f": true, "%^asdf": true, "code" : "H12" }\n```\n\nThe only conversions are from the strings `true` and `false` to their proper boolean counterparts.\n\nWe cannot arbitrarily convert numbers because that will drop precision for numbers that require more than 32 bits to represent them.\n\n\n## Streaming\n\nPut this in your pipe and smoke it.\n\n### `logfmt.streamParser()`\n\nCreates a streaming parser that will automatically split and parse incoming lines and\nemit javascript objects.\n\nStream in from STDIN\n\n```javascript\nprocess.stdin.pipe(logfmt.streamParser())\n```\n\nOr pipe from an HTTP request\n\n```javascript\nreq.pipe(logfmt.streamParser())\n```\n\n### `logfmt.streamStringify([options])`\n\nPipe objects into the stream and it will write logfmt.\nYou can customize the delimiter via the `options` object, which\ndefaults to `\\n` (newlines).\n\n```javascript\n  var parseJSON = function(line) {\n    if(!line) return;\n    this.queue(JSON.parse(line.trim()))\n  }\n\n  process.stdin\n    .pipe(split())\n    .pipe(through(parseJSON))\n    .pipe(logfmt.streamStringify())\n    .pipe(process.stdout)\n```\n\n#### Example\n\n\nExample command line of parsing logfmt and echoing objects to STDOUT:\n\n```javascript\nvar logfmt  = require(\'logfmt\');\nvar through = require(\'through\');\n\nprocess.stdin\n  .pipe(logfmt.streamParser())\n  .pipe(through(function(object){\n    console.log(object);\n  }))\n```\n\nExample HTTP request parsing logfmt and echoing objects to STDOUT:\n\n```javascript\nvar http    = require(\'http\');\nvar logfmt  = require(\'logfmt\');\nvar through = require(\'through\');\n\nhttp.createServer(function (req, res) {\n  req.pipe(logfmt.streamParser())\n     .pipe(through(function(object){\n       console.log(object);\n     }))\n\n  res.writeHead(200, {\'Content-Type\': \'text/plain\'});\n  res.end(\'OK\');\n}).listen(3000);\n```\n\n## express/restify parsing middleware\n\n```javascript\n  // streaming\n  app.use(logfmt.bodyParserStream());\n  // buffering\n  app.use(logfmt.bodyParser());\n```\n\n#### `logfmt.bodyParserStream([opts])`\n\nValid Options:\n\n- `contentType`: defaults to `application/logplex-1`\n\nIf you use the `logfmt.bodyParserStream()` for a body parser,\nyou will have a `req.body` that is a readable stream.\n\nPipes FTW:\n\n```javascript\nvar app    = require(\'express\')();\nvar http   = require(\'http\');\nvar through = require(\'through\');\nvar logfmt  = require(\'logfmt\');\n\napp.use(logfmt.bodyParserStream());\n\napp.post(\'/logs\', function(req, res){\n  if(!req.body) return res.send(\'OK\');\n\n  req.body.pipe(through(function(line){\n    console.dir(line);\n  }))\n\n  res.send(\'OK\');\n})\n\nhttp.createServer(app).listen(3000);\n```\n\nOr you can just use the `readable` event:\n\n```javascript\nvar app    = require(\'express\')();\nvar http   = require(\'http\');\nvar logfmt  = require(\'logfmt\');\n\napp.use(logfmt.bodyParserStream());\n\n// req.body is now a Readable Stream\napp.post(\'/logs\', function(req, res){\n  req.body.on(\'readable\', function(){\n    var parsedLine = req.body.read();\n    if(parsedLine) console.log(parsedLine);\n    else res.send(\'OK\');\n  })\n})\n\nhttp.createServer(app).listen(3000);\n```\n\n### Non-Streaming\n\n#### `logfmt.bodyParser([opts])`\n\nValid Options:\n\n- `contentType`: defaults to `application/logplex-1`\n\nIf you use the `logfmt.bodyParser()` for a body parser,\nyou will have a `req.body` that is an array of objects.\n\n```javascript\nvar logfmt   = require(\'logfmt\');\n\napp.use(logfmt.bodyParser());\n\n// req.body is now an array of objects\napp.post(\'/logs\', function(req, res){\n  console.log(\'BODY: \' + JSON.stringify(req.body));\n  req.body.forEach(function(data){\n    console.log(data);\n  });\n  res.send(\'OK\');\n})\n\nhttp.createServer(app).listen(3000);\n```\n\ntest it:\n\n```bash\ncurl -X POST --header \'Content-Type: application/logplex-1\' -d "foo=bar a=14 baz=\\"hello kitty\\" cool%story=bro f %^asdf" http://localhost:3000/logs\n```\n\n## logging\n\nLog an object to `logfmt.stream` (defaults to STDOUT)\n\nUses the `logfmt.stringify` function to write the result to `logfmt.stream`\n\n```javascript\nlogfmt.log({foo: "bar", a: 14, baz: \'hello kitty\'})\n//=> foo=bar a=14 baz="hello kitty"\n//> undefined\n```\n\n### `logfmt.log(object, [stream])`\n\nDefaults to logging to `process.stdout`\n\n```javascript\nlogfmt.log({ "foo": "bar", "a": 14, baz: \'hello kitty\'})\n//=> foo=bar a=14 baz="hello kitty"\n```\n\n#### customizing logging location\n\n`logfmt.log()` Accepts as 2nd argument anything that responds to `write(string)`\n```javascript\nvar logfmt = require(\'logfmt\');\nlogfmt.log({ "foo": "bar", "a": 14, baz: \'hello kitty\'}, process.stderr)\n//=> foo=bar a=14 baz="hello kitty"\n```\n\nOverwrite the default global location by setting `logfmt.stream`\n```javascript\nvar logfmt = require(\'logfmt\');\nlogfmt.stream = process.stderr\n\nlogfmt.log({ "foo": "bar", "a": 14, baz: \'hello kitty\'})\n//=> foo=bar a=14 baz="hello kitty"\n```\n\nYou can have multiple, isolated logfmts by using `new`.\n\n```javascript\nvar logfmt = require(\'logfmt\');\nvar errorLogger = new logfmt;\nerrorLogger.stream = process.stderr\n\nlogfmt.log({hello: \'stdout\'});\n//=> hello=stdout\n\nerrorLogger.log({hello: \'stderr\'});\n//=> hello=stderr\n```\n\n### `logfmt.namespace(object)`\n\nReturns a new `logfmt` with object\'s data included in every `log` call.\n\n```javascript\nvar logfmt = require(\'logfmt\').namespace({app: \'logfmt\'});\n\nlogfmt.log({ "foo": "bar", "a": 14, baz: \'hello kitty\'})\n//=> app=logfmt foo=bar a=14 baz="hello kitty"\n\nlogfmt.log({})\n//=> app=logfmt\n\nlogfmt.log({hello: \'world\'})\n//=> app=logfmt hello=world\n```\n\n### `logfmt.time([label])`\n\nLog how long something takes.\nReturns a new `logfmt` with elapsed milliseconds included in every `log` call.\n\n- `label`: optional name for the milliseconds key. defaults to: `elapsed=<milliseconds>ms`\n\n```javascript\nvar timer = logfmt.time();\ntimer.log();\n//=> elapsed=1ms\n```\n\nString `label` changes the key to `<string>=<milliseconds>ms`\n\n```javascript\nvar timer = logfmt.time(\'time\');\ntimer.log();\n//=> time=1ms\ntimer.log();\n//=> time=2ms\n```\n\nIf you\'d like to include data, just chain a call to namespace.\n\n```javascript\nvar timer = logfmt.time(\'time\').namespace({foo: \'bar\'});\ntimer.log();\n//=> time=1ms foo=bar\ntimer.log();\n//=> time=2ms foo=bar\n```\n\n### `logfmt.error(error)`\n\nAccepts a Javascript `Error` object and converts it to logfmt format.\n\nIt will print up to `logfmt.maxErrorLines` lines.\n\n```javascript\nvar logfmt = require(\'logfmt\');\nlogfmt.error(new Error(\'test error\'));\n//=> at=error id=12345 message="test error"\n//=> at=error id=12345 line=0 trace="Error: test error"\n//=> ...\n```\n\n## express/restify logging middleware\n\n```javascript\napp.use(logfmt.requestLogger());\n//=> ip=127.0.0.1 time=2013-08-05T20:50:19.216Z method=POST path=/logs status=200 content_length=337 content_type=application/logplex-1 elapsed=4ms\n```\n\n#### `logfmt.requestLogger([options], [formatter(req, res)])`\n\nIf no formatter is supplied it will default to `logfmt.requestLogger.commonFormatter` which is based\non having similiar fields to the Apache Common Log format.\n\nValid Options:\n\n- `immediate`: log before call to `next()` (ie: before the request finishes)\n- `elapsed`: renames the `elapsed` key to a key of your choice when in\n             non-immediate mode\n\nDefaults to `immediate: true` and `elapsed: \'elapsed\'`\n\n```javascript\napp.use(logfmt.requestLogger({immediate: true}, function(req, res){\n  return {\n    method: req.method\n  }\n}));\n//=> method=POST\n```\n\n```javascript\napp.use(logfmt.requestLogger({elapsed: \'request.time\'}, function(req, res){\n  return {\n    "request.method": req.method\n  }\n}));\n//=> request.method=POST request.time=12ms\n```\n\n##### `formatter(req, res)`\n\nA formatter takes the request and response and returns a JSON object for `logfmt.log`\n\n```javascript\napp.use(logfmt.requestLogger(function(req, res){\n  return {\n    method: req.method\n  }\n}));\n//=> method=POST elapsed=4ms\n```\n\nIt\'s always possible to piggyback on top of the `commonFormatter`\n\n```javascript\napp.use(logfmt.requestLogger(function(req, res){\n  var data = logfmt.requestLogger.commonFormatter(req, res)\n  return {\n    ip: data.ip,\n    time: data.time,\n    foo: \'bar\'\n  };\n}));\n//=> ip=127.0.0.1 time=2013-08-05T20:50:19.216Z foo=bar elapsed=4ms\n```\n\n# Development\n\nPull Requests welcome.\n\n## Tests\n\n    > npm test\n\n# License\n\nMIT\n',
+203 silly resolved     readmeFilename: 'README.md',
+203 silly resolved     bugs: { url: 'https://github.com/csquared/node-logfmt/issues' },
+203 silly resolved     _id: 'logfmt@1.1.2',
+203 silly resolved     dist: { shasum: '2e39cd575b546e9e6ae586754263b7d26d4233b3' },
+203 silly resolved     _from: 'logfmt@',
+203 silly resolved     _resolved: 'https://registry.npmjs.org/logfmt/-/logfmt-1.1.2.tgz' } ]
+204 info install logfmt@1.1.2 into /Library/WebServer/Documents/prototypes/heroku
+205 info installOne logfmt@1.1.2
+206 verbose from cache /Users/rehabstudio/.npm/logfmt/1.1.2/package/package.json
+207 info /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt unbuild
+208 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/package.json
+209 verbose tar unpack /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+210 silly lockFile 6122162a-types-heroku-node-modules-logfmt /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+211 verbose lock /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt /Users/rehabstudio/.npm/6122162a-types-heroku-node-modules-logfmt.lock
+212 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+213 verbose lock /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz /Users/rehabstudio/.npm/365f0c69-dio-npm-logfmt-1-1-2-package-tgz.lock
+214 silly gunzTarPerm modes [ '755', '644' ]
+215 silly gunzTarPerm extractEntry package.json
+216 silly gunzTarPerm extractEntry .npmignore
+217 silly gunzTarPerm extractEntry README.md
+218 silly gunzTarPerm extractEntry logfmt.js
+219 silly gunzTarPerm extractEntry .travis.yml
+220 silly gunzTarPerm extractEntry bin/logfmt
+221 silly gunzTarPerm extractEntry examples/express_buffered.js
+222 silly gunzTarPerm extractEntry examples/express_readable.js
+223 silly gunzTarPerm extractEntry examples/two_streams.js
+224 silly gunzTarPerm extractEntry examples/https.js
+225 silly gunzTarPerm extractEntry examples/express_pipe_to_stdout.js
+226 silly gunzTarPerm extractEntry examples/post_to_express.js
+227 silly gunzTarPerm extractEntry examples/through.js
+228 silly gunzTarPerm extractEntry examples/simple_cmd.js
+229 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout2.js
+230 silly gunzTarPerm extractEntry examples/express_mime.js
+231 silly gunzTarPerm extractEntry examples/express_pipe.js
+232 silly gunzTarPerm extractEntry examples/restify_pipe_to_stdout.js
+233 silly gunzTarPerm extractEntry examples/timed_log.js
+234 silly gunzTarPerm extractEntry examples/vanilla_http.js
+235 silly gunzTarPerm extractEntry examples/restify_buffered.js
+236 silly gunzTarPerm extractEntry examples/r14.logfmt
+237 silly gunzTarPerm extractEntry examples/speed.sh
+238 silly gunzTarPerm extractEntry examples/test_cmd_line
+239 silly gunzTarPerm extractEntry examples/test_express
+240 silly gunzTarPerm extractEntry examples/quick.sh
+241 silly gunzTarPerm extractEntry examples/test_log
+242 silly gunzTarPerm extractEntry examples/post_via_curl
+243 silly gunzTarPerm extractEntry examples/post_form
+244 silly gunzTarPerm extractEntry examples/file
+245 silly gunzTarPerm extractEntry examples/test_express_readable
+246 silly gunzTarPerm extractEntry lib/body_parser.js
+247 silly gunzTarPerm extractEntry lib/body_parser_stream.js
+248 silly gunzTarPerm extractEntry lib/logfmt_parser.js
+249 silly gunzTarPerm extractEntry lib/logger.js
+250 silly gunzTarPerm extractEntry lib/request_logger.js
+251 silly gunzTarPerm extractEntry lib/streaming.js
+252 silly gunzTarPerm extractEntry lib/stringify.js
+253 silly gunzTarPerm extractEntry test/body_parser_stream_test.js
+254 silly gunzTarPerm extractEntry test/stringify_test.js
+255 silly gunzTarPerm extractEntry test/namespace_test.js
+256 silly gunzTarPerm extractEntry test/namespace_time.js
+257 silly gunzTarPerm extractEntry test/logging_tests.js
+258 silly gunzTarPerm extractEntry test/body_parser_test.js
+259 silly gunzTarPerm extractEntry test/parser_tests.js
+260 silly gunzTarPerm extractEntry test/request_logger_test.js
+261 silly gunzTarPerm extractEntry test/roundtrip_tests.js
+262 silly gunzTarPerm extractEntry test/singleton_test.js
+263 silly gunzTarPerm extractEntry test/log_time.js
+264 silly gunzTarPerm extractEntry test/stream_parser_test.js
+265 silly gunzTarPerm extractEntry test/error_tests.js
+266 silly gunzTarPerm extractEntry test/stream_stringify_test.js
+267 silly gunzTarPerm extractEntry test/new_logfmt.js
+268 silly gunzTarPerm extractEntry test/through_test.js
+269 silly gunzTarPerm extractEntry test/outstream.js
+270 silly gunzTarPerm extractEntry test/mocha.opts
+271 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/package.json
+272 silly lockFile 6122162a-types-heroku-node-modules-logfmt /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+273 silly lockFile 6122162a-types-heroku-node-modules-logfmt /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+274 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+275 silly lockFile 365f0c69-dio-npm-logfmt-1-1-2-package-tgz /Users/rehabstudio/.npm/logfmt/1.1.2/package.tgz
+276 info preinstall logfmt@1.1.2
+277 verbose from cache /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/package.json
+278 verbose readDependencies using package.json deps
+279 verbose from cache /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/package.json
+280 verbose readDependencies using package.json deps
+281 verbose cache add [ 'split@0.2.x', null ]
+282 verbose cache add name=undefined spec="split@0.2.x" args=["split@0.2.x",null]
+283 verbose parsed url { protocol: null,
+283 verbose parsed url   slashes: null,
+283 verbose parsed url   auth: null,
+283 verbose parsed url   host: null,
+283 verbose parsed url   port: null,
+283 verbose parsed url   hostname: null,
+283 verbose parsed url   hash: null,
+283 verbose parsed url   search: null,
+283 verbose parsed url   query: null,
+283 verbose parsed url   pathname: 'split@0.2.x',
+283 verbose parsed url   path: 'split@0.2.x',
+283 verbose parsed url   href: 'split@0.2.x' }
+284 verbose cache add name="split" spec="0.2.x" args=["split","0.2.x"]
+285 verbose parsed url { protocol: null,
+285 verbose parsed url   slashes: null,
+285 verbose parsed url   auth: null,
+285 verbose parsed url   host: null,
+285 verbose parsed url   port: null,
+285 verbose parsed url   hostname: null,
+285 verbose parsed url   hash: null,
+285 verbose parsed url   search: null,
+285 verbose parsed url   query: null,
+285 verbose parsed url   pathname: '0.2.x',
+285 verbose parsed url   path: '0.2.x',
+285 verbose parsed url   href: '0.2.x' }
+286 verbose addNamed [ 'split', '0.2.x' ]
+287 verbose addNamed [ null, '>=0.2.0- <0.3.0-' ]
+288 silly lockFile 1618e0b3-split-0-2-x split@0.2.x
+289 verbose lock split@0.2.x /Users/rehabstudio/.npm/1618e0b3-split-0-2-x.lock
+290 verbose cache add [ 'through@2.3.x', null ]
+291 verbose cache add name=undefined spec="through@2.3.x" args=["through@2.3.x",null]
+292 verbose parsed url { protocol: null,
+292 verbose parsed url   slashes: null,
+292 verbose parsed url   auth: null,
+292 verbose parsed url   host: null,
+292 verbose parsed url   port: null,
+292 verbose parsed url   hostname: null,
+292 verbose parsed url   hash: null,
+292 verbose parsed url   search: null,
+292 verbose parsed url   query: null,
+292 verbose parsed url   pathname: 'through@2.3.x',
+292 verbose parsed url   path: 'through@2.3.x',
+292 verbose parsed url   href: 'through@2.3.x' }
+293 verbose cache add name="through" spec="2.3.x" args=["through","2.3.x"]
+294 verbose parsed url { protocol: null,
+294 verbose parsed url   slashes: null,
+294 verbose parsed url   auth: null,
+294 verbose parsed url   host: null,
+294 verbose parsed url   port: null,
+294 verbose parsed url   hostname: null,
+294 verbose parsed url   hash: null,
+294 verbose parsed url   search: null,
+294 verbose parsed url   query: null,
+294 verbose parsed url   pathname: '2.3.x',
+294 verbose parsed url   path: '2.3.x',
+294 verbose parsed url   href: '2.3.x' }
+295 verbose addNamed [ 'through', '2.3.x' ]
+296 verbose addNamed [ null, '>=2.3.0- <2.4.0-' ]
+297 silly lockFile 40db7b34-through-2-3-x through@2.3.x
+298 verbose lock through@2.3.x /Users/rehabstudio/.npm/40db7b34-through-2-3-x.lock
+299 silly addNameRange { name: 'split', range: '>=0.2.0- <0.3.0-', hasData: false }
+300 verbose cache add [ 'lodash@~2.4.1', null ]
+301 verbose cache add name=undefined spec="lodash@~2.4.1" args=["lodash@~2.4.1",null]
+302 verbose parsed url { protocol: null,
+302 verbose parsed url   slashes: null,
+302 verbose parsed url   auth: null,
+302 verbose parsed url   host: null,
+302 verbose parsed url   port: null,
+302 verbose parsed url   hostname: null,
+302 verbose parsed url   hash: null,
+302 verbose parsed url   search: null,
+302 verbose parsed url   query: null,
+302 verbose parsed url   pathname: 'lodash@~2.4.1',
+302 verbose parsed url   path: 'lodash@~2.4.1',
+302 verbose parsed url   href: 'lodash@~2.4.1' }
+303 verbose cache add name="lodash" spec="~2.4.1" args=["lodash","~2.4.1"]
+304 verbose parsed url { protocol: null,
+304 verbose parsed url   slashes: null,
+304 verbose parsed url   auth: null,
+304 verbose parsed url   host: null,
+304 verbose parsed url   port: null,
+304 verbose parsed url   hostname: null,
+304 verbose parsed url   hash: null,
+304 verbose parsed url   search: null,
+304 verbose parsed url   query: null,
+304 verbose parsed url   pathname: '~2.4.1',
+304 verbose parsed url   path: '~2.4.1',
+304 verbose parsed url   href: '~2.4.1' }
+305 verbose addNamed [ 'lodash', '~2.4.1' ]
+306 verbose addNamed [ null, '>=2.4.1- <2.5.0-' ]
+307 silly lockFile 257f9ab3-lodash-2-4-1 lodash@~2.4.1
+308 verbose lock lodash@~2.4.1 /Users/rehabstudio/.npm/257f9ab3-lodash-2-4-1.lock
+309 silly addNameRange { name: 'through', range: '>=2.3.0- <2.4.0-', hasData: false }
+310 verbose url raw split
+311 verbose url resolving [ 'https://registry.npmjs.org/', './split' ]
+312 verbose url resolved https://registry.npmjs.org/split
+313 info trying registry request attempt 1 at 16:06:35
+314 http GET https://registry.npmjs.org/split
+315 silly addNameRange { name: 'lodash', range: '>=2.4.1- <2.5.0-', hasData: false }
+316 verbose url raw through
+317 verbose url resolving [ 'https://registry.npmjs.org/', './through' ]
+318 verbose url resolved https://registry.npmjs.org/through
+319 info trying registry request attempt 1 at 16:06:35
+320 http GET https://registry.npmjs.org/through
+321 verbose url raw lodash
+322 verbose url resolving [ 'https://registry.npmjs.org/', './lodash' ]
+323 verbose url resolved https://registry.npmjs.org/lodash
+324 info trying registry request attempt 1 at 16:06:35
+325 verbose etag "4FLHUJN21BJEYHBE3CMAKTF8K"
+326 http GET https://registry.npmjs.org/lodash
+327 http 304 https://registry.npmjs.org/lodash
+328 silly registry.get cb [ 304,
+328 silly registry.get   { date: 'Tue, 15 Apr 2014 15:07:36 GMT',
+328 silly registry.get     server: 'Apache',
+328 silly registry.get     via: '1.1 varnish',
+328 silly registry.get     'last-modified': 'Tue, 15 Apr 2014 15:07:25 GMT',
+328 silly registry.get     'cache-control': 'max-age=1',
+328 silly registry.get     etag: '"4FLHUJN21BJEYHBE3CMAKTF8K"',
+328 silly registry.get     'x-served-by': 'cache-am70-AMS',
+328 silly registry.get     'x-cache': 'HIT',
+328 silly registry.get     'x-cache-hits': '2',
+328 silly registry.get     'x-timer': 'S1397574456.788186312,VS0,VE0',
+328 silly registry.get     vary: 'Accept',
+328 silly registry.get     'content-length': '0',
+328 silly registry.get     'keep-alive': 'timeout=10, max=50',
+328 silly registry.get     connection: 'Keep-Alive' } ]
+329 verbose etag lodash from cache
+330 silly addNameRange number 2 { name: 'lodash', range: '>=2.4.1- <2.5.0-', hasData: true }
+331 silly addNameRange versions [ 'lodash',
+331 silly addNameRange   [ '0.1.0',
+331 silly addNameRange     '0.2.0',
+331 silly addNameRange     '0.2.1',
+331 silly addNameRange     '0.2.2',
+331 silly addNameRange     '0.3.0',
+331 silly addNameRange     '0.3.1',
+331 silly addNameRange     '0.3.2',
+331 silly addNameRange     '0.4.0',
+331 silly addNameRange     '0.4.1',
+331 silly addNameRange     '0.4.2',
+331 silly addNameRange     '0.5.0-rc.1',
+331 silly addNameRange     '0.5.0',
+331 silly addNameRange     '0.5.1',
+331 silly addNameRange     '0.5.2',
+331 silly addNameRange     '0.6.0',
+331 silly addNameRange     '0.6.1',
+331 silly addNameRange     '0.7.0',
+331 silly addNameRange     '0.8.0',
+331 silly addNameRange     '0.8.1',
+331 silly addNameRange     '0.8.2',
+331 silly addNameRange     '0.9.0',
+331 silly addNameRange     '0.9.1',
+331 silly addNameRange     '0.9.2',
+331 silly addNameRange     '0.10.0',
+331 silly addNameRange     '1.0.0-rc.1',
+331 silly addNameRange     '1.0.0-rc.2',
+331 silly addNameRange     '1.0.0-rc.3',
+331 silly addNameRange     '1.0.0',
+331 silly addNameRange     '1.0.1',
+331 silly addNameRange     '1.1.0',
+331 silly addNameRange     '1.1.1',
+331 silly addNameRange     '1.2.0',
+331 silly addNameRange     '1.2.1',
+331 silly addNameRange     '1.3.0',
+331 silly addNameRange     '1.3.1',
+331 silly addNameRange     '2.0.0',
+331 silly addNameRange     '2.1.0',
+331 silly addNameRange     '2.2.0',
+331 silly addNameRange     '2.2.1',
+331 silly addNameRange     '2.3.0',
+331 silly addNameRange     '2.4.0',
+331 silly addNameRange     '2.4.1' ] ]
+332 verbose addNamed [ 'lodash', '2.4.1' ]
+333 verbose addNamed [ '2.4.1', '2.4.1' ]
+334 silly lockFile 8502be2a-lodash-2-4-1 lodash@2.4.1
+335 verbose lock lodash@2.4.1 /Users/rehabstudio/.npm/8502be2a-lodash-2-4-1.lock
+336 verbose read json /Users/rehabstudio/.npm/lodash/2.4.1/package/package.json
+337 silly lockFile 8502be2a-lodash-2-4-1 lodash@2.4.1
+338 silly lockFile 8502be2a-lodash-2-4-1 lodash@2.4.1
+339 silly lockFile 257f9ab3-lodash-2-4-1 lodash@~2.4.1
+340 silly lockFile 257f9ab3-lodash-2-4-1 lodash@~2.4.1
+341 http 200 https://registry.npmjs.org/through
+342 silly registry.get cb [ 200,
+342 silly registry.get   { date: 'Tue, 15 Apr 2014 15:07:36 GMT',
+342 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+342 silly registry.get     etag: '"8SZLA241KUNYM8L8IT9FBQLG1"',
+342 silly registry.get     'content-type': 'application/json',
+342 silly registry.get     via: '1.1 varnish',
+342 silly registry.get     'cache-control': 'max-age=1',
+342 silly registry.get     'content-length': '24986',
+342 silly registry.get     'accept-ranges': 'bytes',
+342 silly registry.get     age: '47',
+342 silly registry.get     'x-served-by': 'cache-v42-ASH, cache-am77-AMS',
+342 silly registry.get     'x-cache': 'HIT, HIT',
+342 silly registry.get     'x-cache-hits': '1, 1',
+342 silly registry.get     'x-timer': 'S1397506618.395858049,VS0,VS40,VE41,VE67838456',
+342 silly registry.get     vary: 'Accept',
+342 silly registry.get     'keep-alive': 'timeout=10, max=50',
+342 silly registry.get     connection: 'Keep-Alive' } ]
+343 silly addNameRange number 2 { name: 'through', range: '>=2.3.0- <2.4.0-', hasData: true }
+344 silly addNameRange versions [ 'through',
+344 silly addNameRange   [ '0.0.1',
+344 silly addNameRange     '0.0.2',
+344 silly addNameRange     '0.0.3',
+344 silly addNameRange     '0.0.4',
+344 silly addNameRange     '0.1.0',
+344 silly addNameRange     '0.1.1',
+344 silly addNameRange     '0.1.2',
+344 silly addNameRange     '0.1.3',
+344 silly addNameRange     '0.1.4',
+344 silly addNameRange     '1.0.0',
+344 silly addNameRange     '1.1.0',
+344 silly addNameRange     '1.1.1',
+344 silly addNameRange     '1.1.2',
+344 silly addNameRange     '2.0.0',
+344 silly addNameRange     '2.1.0',
+344 silly addNameRange     '2.2.0',
+344 silly addNameRange     '2.2.1',
+344 silly addNameRange     '2.2.2',
+344 silly addNameRange     '2.2.4',
+344 silly addNameRange     '2.2.5',
+344 silly addNameRange     '2.2.6',
+344 silly addNameRange     '2.2.7',
+344 silly addNameRange     '2.3.1',
+344 silly addNameRange     '2.3.2',
+344 silly addNameRange     '2.3.3',
+344 silly addNameRange     '2.3.4' ] ]
+345 verbose addNamed [ 'through', '2.3.4' ]
+346 verbose addNamed [ '2.3.4', '2.3.4' ]
+347 silly lockFile 9b29f59f-through-2-3-4 through@2.3.4
+348 verbose lock through@2.3.4 /Users/rehabstudio/.npm/9b29f59f-through-2-3-4.lock
+349 silly lockFile 66c2675b-js-org-through-through-2-3-4-tgz https://registry.npmjs.org/through/-/through-2.3.4.tgz
+350 verbose lock https://registry.npmjs.org/through/-/through-2.3.4.tgz /Users/rehabstudio/.npm/66c2675b-js-org-through-through-2-3-4-tgz.lock
+351 verbose addRemoteTarball [ 'https://registry.npmjs.org/through/-/through-2.3.4.tgz',
+351 verbose addRemoteTarball   '495e40e8d8a8eaebc7c275ea88c2b8fc14c56455' ]
+352 info retry fetch attempt 1 at 16:06:35
+353 verbose fetch to= /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz
+354 http GET https://registry.npmjs.org/through/-/through-2.3.4.tgz
+355 http 200 https://registry.npmjs.org/split
+356 silly registry.get cb [ 200,
+356 silly registry.get   { date: 'Tue, 15 Apr 2014 15:07:36 GMT',
+356 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+356 silly registry.get     etag: '"2DC74H1LGDFU5W9O17E6SGZQY"',
+356 silly registry.get     'content-type': 'application/json',
+356 silly registry.get     via: '1.1 varnish',
+356 silly registry.get     'cache-control': 'max-age=1',
+356 silly registry.get     'content-length': '16150',
+356 silly registry.get     'accept-ranges': 'bytes',
+356 silly registry.get     age: '918',
+356 silly registry.get     'x-served-by': 'cache-v42-ASH, cache-am76-AMS',
+356 silly registry.get     'x-cache': 'HIT, HIT',
+356 silly registry.get     'x-cache-hits': '1, 1',
+356 silly registry.get     'x-timer': 'S1397571940.073918581,VS0,VS-2,VE-2,VE2516862',
+356 silly registry.get     vary: 'Accept',
+356 silly registry.get     'keep-alive': 'timeout=10, max=50',
+356 silly registry.get     connection: 'Keep-Alive' } ]
+357 silly addNameRange number 2 { name: 'split', range: '>=0.2.0- <0.3.0-', hasData: true }
+358 silly addNameRange versions [ 'split',
+358 silly addNameRange   [ '0.0.0',
+358 silly addNameRange     '0.1.0',
+358 silly addNameRange     '0.1.1',
+358 silly addNameRange     '0.1.2',
+358 silly addNameRange     '0.2.0',
+358 silly addNameRange     '0.2.1',
+358 silly addNameRange     '0.2.3',
+358 silly addNameRange     '0.2.4',
+358 silly addNameRange     '0.2.5',
+358 silly addNameRange     '0.2.6',
+358 silly addNameRange     '0.2.7',
+358 silly addNameRange     '0.2.8',
+358 silly addNameRange     '0.2.9',
+358 silly addNameRange     '0.2.10',
+358 silly addNameRange     '0.3.0' ] ]
+359 verbose addNamed [ 'split', '0.2.10' ]
+360 verbose addNamed [ '0.2.10', '0.2.10' ]
+361 silly lockFile 9296d6b5-split-0-2-10 split@0.2.10
+362 verbose lock split@0.2.10 /Users/rehabstudio/.npm/9296d6b5-split-0-2-10.lock
+363 silly lockFile 7fb4d2a6-npmjs-org-split-split-0-2-10-tgz https://registry.npmjs.org/split/-/split-0.2.10.tgz
+364 verbose lock https://registry.npmjs.org/split/-/split-0.2.10.tgz /Users/rehabstudio/.npm/7fb4d2a6-npmjs-org-split-split-0-2-10-tgz.lock
+365 verbose addRemoteTarball [ 'https://registry.npmjs.org/split/-/split-0.2.10.tgz',
+365 verbose addRemoteTarball   '67097c601d697ce1368f418f06cd201cf0521a57' ]
+366 info retry fetch attempt 1 at 16:06:35
+367 verbose fetch to= /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz
+368 http GET https://registry.npmjs.org/split/-/split-0.2.10.tgz
+369 http 200 https://registry.npmjs.org/through/-/through-2.3.4.tgz
+370 verbose tar unpack /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz
+371 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+372 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package /Users/rehabstudio/.npm/9948d408-95325-0-2731768246740103-package.lock
+373 silly lockFile 099662f6-95325-0-2731768246740103-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz
+374 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz /Users/rehabstudio/.npm/099662f6-95325-0-2731768246740103-tmp-tgz.lock
+375 silly gunzTarPerm modes [ '755', '644' ]
+376 silly gunzTarPerm extractEntry package.json
+377 silly gunzTarPerm extractEntry index.js
+378 silly gunzTarPerm extractEntry .travis.yml
+379 silly gunzTarPerm extractEntry LICENSE.APACHE2
+380 silly gunzTarPerm extractEntry LICENSE.MIT
+381 silly gunzTarPerm extractEntry readme.markdown
+382 silly gunzTarPerm extractEntry test/auto-destroy.js
+383 silly gunzTarPerm extractEntry test/buffering.js
+384 silly gunzTarPerm extractEntry test/end.js
+385 silly gunzTarPerm extractEntry test/index.js
+386 verbose read json /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package/package.json
+387 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+388 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+389 silly lockFile 099662f6-95325-0-2731768246740103-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz
+390 silly lockFile 099662f6-95325-0-2731768246740103-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/tmp.tgz
+391 verbose from cache /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package/package.json
+392 verbose tar pack [ '/Users/rehabstudio/.npm/through/2.3.4/package.tgz',
+392 verbose tar pack   '/var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package' ]
+393 verbose tarball /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+394 verbose folder /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+395 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+396 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package /Users/rehabstudio/.npm/9948d408-95325-0-2731768246740103-package.lock
+397 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+398 verbose lock /Users/rehabstudio/.npm/through/2.3.4/package.tgz /Users/rehabstudio/.npm/646ccbc3-io-npm-through-2-3-4-package-tgz.lock
+399 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+400 silly lockFile 9948d408-95325-0-2731768246740103-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395325-0.2731768246740103/package
+401 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+402 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+403 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+404 verbose lock /Users/rehabstudio/.npm/through/2.3.4/package /Users/rehabstudio/.npm/daa2414e-studio-npm-through-2-3-4-package.lock
+405 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+406 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+407 verbose tar unpack /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+408 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+409 verbose lock /Users/rehabstudio/.npm/through/2.3.4/package /Users/rehabstudio/.npm/daa2414e-studio-npm-through-2-3-4-package.lock
+410 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+411 verbose lock /Users/rehabstudio/.npm/through/2.3.4/package.tgz /Users/rehabstudio/.npm/646ccbc3-io-npm-through-2-3-4-package-tgz.lock
+412 silly gunzTarPerm modes [ '755', '644' ]
+413 silly gunzTarPerm extractEntry package.json
+414 silly gunzTarPerm extractEntry index.js
+415 silly gunzTarPerm extractEntry .travis.yml
+416 silly gunzTarPerm extractEntry LICENSE.APACHE2
+417 silly gunzTarPerm extractEntry LICENSE.MIT
+418 silly gunzTarPerm extractEntry readme.markdown
+419 silly gunzTarPerm extractEntry test/auto-destroy.js
+420 silly gunzTarPerm extractEntry test/buffering.js
+421 silly gunzTarPerm extractEntry test/end.js
+422 silly gunzTarPerm extractEntry test/index.js
+423 verbose read json /Users/rehabstudio/.npm/through/2.3.4/package/package.json
+424 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+425 silly lockFile daa2414e-studio-npm-through-2-3-4-package /Users/rehabstudio/.npm/through/2.3.4/package
+426 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+427 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+428 verbose from cache /Users/rehabstudio/.npm/through/2.3.4/package/package.json
+429 verbose chmod /Users/rehabstudio/.npm/through/2.3.4/package.tgz 644
+430 verbose chown /Users/rehabstudio/.npm/through/2.3.4/package.tgz [ 501, 20 ]
+431 silly lockFile 66c2675b-js-org-through-through-2-3-4-tgz https://registry.npmjs.org/through/-/through-2.3.4.tgz
+432 silly lockFile 66c2675b-js-org-through-through-2-3-4-tgz https://registry.npmjs.org/through/-/through-2.3.4.tgz
+433 silly lockFile 9b29f59f-through-2-3-4 through@2.3.4
+434 silly lockFile 9b29f59f-through-2-3-4 through@2.3.4
+435 silly lockFile 40db7b34-through-2-3-x through@2.3.x
+436 silly lockFile 40db7b34-through-2-3-x through@2.3.x
+437 http 200 https://registry.npmjs.org/split/-/split-0.2.10.tgz
+438 verbose tar unpack /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz
+439 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+440 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package /Users/rehabstudio/.npm/2df1f35e-95409-0-7396928002126515-package.lock
+441 silly lockFile e493bac5-95409-0-7396928002126515-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz
+442 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz /Users/rehabstudio/.npm/e493bac5-95409-0-7396928002126515-tmp-tgz.lock
+443 silly gunzTarPerm modes [ '755', '644' ]
+444 silly gunzTarPerm extractEntry package.json
+445 silly gunzTarPerm extractEntry .npmignore
+446 silly gunzTarPerm extractEntry LICENCE
+447 silly gunzTarPerm extractEntry index.js
+448 silly gunzTarPerm extractEntry .travis.yml
+449 silly gunzTarPerm extractEntry examples/pretty.js
+450 silly gunzTarPerm extractEntry readme.markdown
+451 silly gunzTarPerm extractEntry test/partitioned_unicode.js
+452 silly gunzTarPerm extractEntry test/split.asynct.js
+453 silly gunzTarPerm extractEntry test/try_catch.asynct.js
+454 verbose read json /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package/package.json
+455 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+456 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+457 silly lockFile e493bac5-95409-0-7396928002126515-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz
+458 silly lockFile e493bac5-95409-0-7396928002126515-tmp-tgz /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/tmp.tgz
+459 verbose from cache /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package/package.json
+460 verbose tar pack [ '/Users/rehabstudio/.npm/split/0.2.10/package.tgz',
+460 verbose tar pack   '/var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package' ]
+461 verbose tarball /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+462 verbose folder /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+463 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+464 verbose lock /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package /Users/rehabstudio/.npm/2df1f35e-95409-0-7396928002126515-package.lock
+465 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+466 verbose lock /Users/rehabstudio/.npm/split/0.2.10/package.tgz /Users/rehabstudio/.npm/ba4b199f-dio-npm-split-0-2-10-package-tgz.lock
+467 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+468 silly lockFile 2df1f35e-95409-0-7396928002126515-package /var/folders/zw/wq82csd11lb32vkr8yshc6wm0000gn/T/npm-1961/1397574395409-0.7396928002126515/package
+469 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+470 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+471 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+472 verbose lock /Users/rehabstudio/.npm/split/0.2.10/package /Users/rehabstudio/.npm/c56e3e15-bstudio-npm-split-0-2-10-package.lock
+473 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+474 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+475 verbose tar unpack /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+476 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+477 verbose lock /Users/rehabstudio/.npm/split/0.2.10/package /Users/rehabstudio/.npm/c56e3e15-bstudio-npm-split-0-2-10-package.lock
+478 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+479 verbose lock /Users/rehabstudio/.npm/split/0.2.10/package.tgz /Users/rehabstudio/.npm/ba4b199f-dio-npm-split-0-2-10-package-tgz.lock
+480 silly gunzTarPerm modes [ '755', '644' ]
+481 silly gunzTarPerm extractEntry package.json
+482 silly gunzTarPerm extractEntry .npmignore
+483 silly gunzTarPerm extractEntry LICENCE
+484 silly gunzTarPerm extractEntry index.js
+485 silly gunzTarPerm extractEntry .travis.yml
+486 silly gunzTarPerm extractEntry examples/pretty.js
+487 silly gunzTarPerm extractEntry readme.markdown
+488 silly gunzTarPerm extractEntry test/partitioned_unicode.js
+489 silly gunzTarPerm extractEntry test/split.asynct.js
+490 silly gunzTarPerm extractEntry test/try_catch.asynct.js
+491 verbose read json /Users/rehabstudio/.npm/split/0.2.10/package/package.json
+492 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+493 silly lockFile c56e3e15-bstudio-npm-split-0-2-10-package /Users/rehabstudio/.npm/split/0.2.10/package
+494 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+495 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+496 verbose from cache /Users/rehabstudio/.npm/split/0.2.10/package/package.json
+497 verbose chmod /Users/rehabstudio/.npm/split/0.2.10/package.tgz 644
+498 verbose chown /Users/rehabstudio/.npm/split/0.2.10/package.tgz [ 501, 20 ]
+499 silly lockFile 7fb4d2a6-npmjs-org-split-split-0-2-10-tgz https://registry.npmjs.org/split/-/split-0.2.10.tgz
+500 silly lockFile 7fb4d2a6-npmjs-org-split-split-0-2-10-tgz https://registry.npmjs.org/split/-/split-0.2.10.tgz
+501 silly lockFile 9296d6b5-split-0-2-10 split@0.2.10
+502 silly lockFile 9296d6b5-split-0-2-10 split@0.2.10
+503 silly lockFile 1618e0b3-split-0-2-x split@0.2.x
+504 silly lockFile 1618e0b3-split-0-2-x split@0.2.x
+505 silly resolved [ { name: 'lodash',
+505 silly resolved     version: '2.4.1',
+505 silly resolved     description: 'A utility library delivering consistency, customization, performance, & extras.',
+505 silly resolved     homepage: 'http://lodash.com/',
+505 silly resolved     license: 'MIT',
+505 silly resolved     main: 'dist/lodash.js',
+505 silly resolved     keywords:
+505 silly resolved      [ 'amd',
+505 silly resolved        'browser',
+505 silly resolved        'client',
+505 silly resolved        'customize',
+505 silly resolved        'functional',
+505 silly resolved        'server',
+505 silly resolved        'util' ],
+505 silly resolved     author:
+505 silly resolved      { name: 'John-David Dalton',
+505 silly resolved        email: 'john.david.dalton@gmail.com',
+505 silly resolved        url: 'http://allyoucanleet.com/' },
+505 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+505 silly resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+505 silly resolved     repository: { type: 'git', url: 'https://github.com/lodash/lodash.git' },
+505 silly resolved     engines: [ 'node', 'rhino' ],
+505 silly resolved     files:
+505 silly resolved      [ 'LICENSE.txt',
+505 silly resolved        'lodash.js',
+505 silly resolved        'dist/lodash.js',
+505 silly resolved        'dist/lodash.min.js',
+505 silly resolved        'dist/lodash.compat.js',
+505 silly resolved        'dist/lodash.compat.min.js',
+505 silly resolved        'dist/lodash.underscore.js',
+505 silly resolved        'dist/lodash.underscore.min.js' ],
+505 silly resolved     jam: { main: 'dist/lodash.compat.js', include: [Object] },
+505 silly resolved     volo: { type: 'directory', ignore: [Object] },
+505 silly resolved     readme: '# Lo-Dash v2.4.1\nA utility library delivering consistency, [customization](http://lodash.com/custom-builds), [performance](http://lodash.com/benchmarks), & [extras](http://lodash.com/#features).\n\n## Download\n\nCheck out our [wiki]([https://github.com/lodash/lodash/wiki/build-differences]) for details over the differences between builds.\n\n* Modern builds perfect for newer browsers/environments:<br>\n[Development](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.js) &\n[Production](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.min.js)\n\n* Compatibility builds for older environment support too:<br>\n[Development](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.compat.js) &\n[Production](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.compat.min.js)\n\n* Underscore builds to use as a drop-in replacement:<br>\n[Development](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.underscore.js) &\n[Production](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js)\n\nCDN copies are available on [cdnjs](http://cdnjs.com/libraries/lodash.js/) & [jsDelivr](http://www.jsdelivr.com/#!lodash). For smaller file sizes, create [custom builds](http://lodash.com/custom-builds) with only the features needed.\n\nLove modules? We’ve got you covered with [lodash-amd](https://npmjs.org/package/lodash-amd), [lodash-es6](https://github.com/lodash/lodash-es6), [lodash-node](https://npmjs.org/package/lodash-node), & [npm packages](https://npmjs.org/browse/keyword/lodash-modularized) per method.\n\n## Dive in\n\nThere’s plenty of **[documentation](http://lodash.com/docs)**, [unit tests](http://lodash.com/tests), & [benchmarks](http://lodash.com/benchmarks).<br>\nCheck out <a href="http://devdocs.io/lodash/">DevDocs</a> as a fast, organized, & searchable interface for our documentation.\n\nThe full changelog for this release is available on our [wiki](https://github.com/lodash/lodash/wiki/Changelog).<br>\nA list of upcoming features is available on our [roadmap](https://github.com/lodash/lodash/wiki/Roadmap).\n\n## Features *not* in Underscore\n\n * AMD loader support ([curl](https://github.com/cujojs/curl), [dojo](http://dojotoolkit.org/), [requirejs](http://requirejs.org/), etc.)\n * [_(…)](http://lodash.com/docs#_) supports intuitive chaining\n * [_.at](http://lodash.com/docs#at) for cherry-picking collection values\n * [_.bindKey](http://lodash.com/docs#bindKey) for binding [*“lazy”*](http://michaux.ca/articles/lazy-function-definition-pattern) defined methods\n * [_.clone](http://lodash.com/docs#clone) supports shallow cloning of `Date` & `RegExp` objects\n * [_.cloneDeep](http://lodash.com/docs#cloneDeep) for deep cloning arrays & objects\n * [_.constant](http://lodash.com/docs#constant) & [_.property](http://lodash.com/docs#property) function generators for composing functions\n * [_.contains](http://lodash.com/docs#contains) accepts a `fromIndex`\n * [_.create](http://lodash.com/docs#create) for easier object inheritance\n * [_.createCallback](http://lodash.com/docs#createCallback) for extending callbacks in methods & mixins\n * [_.curry](http://lodash.com/docs#curry) for creating [curried](http://hughfdjackson.com/javascript/2013/07/06/why-curry-helps/) functions\n * [_.debounce](http://lodash.com/docs#debounce) & [_.throttle](http://lodash.com/docs#throttle) accept additional `options` for more control\n * [_.findIndex](http://lodash.com/docs#findIndex) & [_.findKey](http://lodash.com/docs#findKey) for finding indexes & keys\n * [_.forEach](http://lodash.com/docs#forEach) is chainable & supports exiting early\n * [_.forIn](http://lodash.com/docs#forIn) for iterating own & inherited properties\n * [_.forOwn](http://lodash.com/docs#forOwn) for iterating own properties\n * [_.isPlainObject](http://lodash.com/docs#isPlainObject) for checking if values are created by `Object`\n * [_.mapValues](http://lodash.com/docs#mapValues) for [mapping](http://lodash.com/docs#map) values to an object\n * [_.memoize](http://lodash.com/docs#memoize) exposes the `cache` of memoized functions\n * [_.merge](http://lodash.com/docs#merge) for a deep [_.extend](http://lodash.com/docs#extend)\n * [_.noop](http://lodash.com/docs#noop) for function placeholders\n * [_.now](http://lodash.com/docs#now) as a cross-browser `Date.now` alternative\n * [_.parseInt](http://lodash.com/docs#parseInt) for consistent behavior\n * [_.pull](http://lodash.com/docs#pull) & [_.remove](http://lodash.com/docs#remove) for mutating arrays\n * [_.random](http://lodash.com/docs#random) supports returning floating-point numbers\n * [_.runInContext](http://lodash.com/docs#runInContext) for easier mocking\n * [_.sortBy](http://lodash.com/docs#sortBy) supports sorting by multiple properties\n * [_.support](http://lodash.com/docs#support) for flagging environment features\n * [_.template](http://lodash.com/docs#template) supports [*“imports”*](http://lodash.com/docs#templateSettings_imports) options & [ES6 template delimiters](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals)\n * [_.transform](http://lodash.com/docs#transform) as a powerful alternative to [_.reduce](http://lodash.com/docs#reduce) for transforming objects\n * [_.where](http://lodash.com/docs#where) supports deep object comparisons\n * [_.xor](http://lodash.com/docs#xor) as a companion to [_.difference](http://lodash.com/docs#difference), [_.intersection](http://lodash.com/docs#intersection), & [_.union](http://lodash.com/docs#union)\n * [_.zip](http://lodash.com/docs#zip) is capable of unzipping values\n * [_.omit](http://lodash.com/docs#omit), [_.pick](http://lodash.com/docs#pick), &\n   [more](http://lodash.com/docs "_.assign, _.clone, _.cloneDeep, _.first, _.initial, _.isEqual, _.last, _.merge, _.rest") accept callbacks\n * [_.contains](http://lodash.com/docs#contains), [_.toArray](http://lodash.com/docs#toArray), &\n   [more](http://lodash.com/docs "_.at, _.countBy, _.every, _.filter, _.find, _.forEach, _.forEachRight, _.groupBy, _.invoke, _.map, _.max, _.min, _.pluck, _.reduce, _.reduceRight, _.reject, _.shuffle, _.size, _.some, _.sortBy, _.where") accept strings\n * [_.filter](http://lodash.com/docs#filter), [_.map](http://lodash.com/docs#map), &\n   [more](http://lodash.com/docs "_.countBy, _.every, _.find, _.findKey, _.findLast, _.findLastIndex, _.findLastKey, _.first, _.groupBy, _.initial, _.last, _.max, _.min, _.reject, _.rest, _.some, _.sortBy, _.sortedIndex, _.uniq") support *“_.pluck”* & *“_.where”* shorthands\n * [_.findLast](http://lodash.com/docs#findLast), [_.findLastIndex](http://lodash.com/docs#findLastIndex), &\n   [more](http://lodash.com/docs "_.findLastKey, _.forEachRight, _.forInRight, _.forOwnRight, _.partialRight") right-associative methods\n\n## Resources\n\n * Podcasts\n  - [JavaScript Jabber](http://javascriptjabber.com/079-jsj-lo-dash-with-john-david-dalton/)\n\n * Posts\n  - [Say “Hello” to Lo-Dash](http://kitcambridge.be/blog/say-hello-to-lo-dash/)\n  - [Custom builds in Lo-Dash 2.0](http://kitcambridge.be/blog/custom-builds-in-lo-dash-2-dot-0/)\n\n * Videos\n  - [Introduction](https://vimeo.com/44154599)\n  - [Origins](https://vimeo.com/44154600)\n  - [Optimizations & builds](https://vimeo.com/44154601)\n  - [Native method use](https://vimeo.com/48576012)\n  - [Testing](https://vimeo.com/45865290)\n  - [CascadiaJS ’12](http://www.youtube.com/watch?v=dpPy4f_SeEk)\n\n A list of other community created podcasts, posts, & videos is available on our [wiki](https://github.com/lodash/lodash/wiki/Resources).\n\n## Support\n\nTested in Chrome 5~31, Firefox 2~25, IE 6-11, Opera 9.25~17, Safari 3-7, Node.js 0.6.21~0.10.22, Narwhal 0.3.2, PhantomJS 1.9.2, RingoJS 0.9, & Rhino 1.7RC5.<br>\nAutomated browser test results [are available](https://saucelabs.com/u/lodash) as well as [Travis CI](https://travis-ci.org/) builds for [lodash](https://travis-ci.org/lodash/lodash/), [lodash-cli](https://travis-ci.org/lodash/lodash-cli/), [lodash-amd](https://travis-ci.org/lodash/lodash-amd/), [lodash-node](https://travis-ci.org/lodash/lodash-node/), & [grunt-lodash](https://travis-ci.org/lodash/grunt-lodash).\n\nSpecial thanks to [Sauce Labs](https://saucelabs.com/) for providing automated browser testing.<br>\n[![Sauce Labs](http://lodash.com/_img/sauce.png)](https://saucelabs.com/ "Sauce Labs: Selenium Testing & More")\n\n## Installation & usage\n\nIn browsers:\n\n```html\n<script src="lodash.js"></script>\n```\n\nUsing [`npm`](http://npmjs.org/):\n\n```bash\nnpm i --save lodash\n\n{sudo} npm i -g lodash\nnpm ln lodash\n```\n\nIn [Node.js](http://nodejs.org/) & [Ringo](http://ringojs.org/):\n\n```js\nvar _ = require(\'lodash\');\n// or as Underscore\nvar _ = require(\'lodash/dist/lodash.underscore\');\n```\n\n**Notes:**\n * Don’t assign values to [special variable](http://nodejs.org/api/repl.html#repl_repl_features) `_` when in the REPL\n * If Lo-Dash is installed globally, run [`npm ln lodash`](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/) in your project’s root directory *before* requiring it\n\nIn [Rhino](http://www.mozilla.org/rhino/):\n\n```js\nload(\'lodash.js\');\n```\n\nIn an AMD loader:\n\n```js\nrequire({\n  \'packages\': [\n    { \'name\': \'lodash\', \'location\': \'path/to/lodash\', \'main\': \'lodash\' }\n  ]\n},\n[\'lodash\'], function(_) {\n  console.log(_.VERSION);\n});\n```\n\n## Author\n\n| [![twitter/jdalton](http://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](https://twitter.com/jdalton "Follow @jdalton on Twitter") |\n|---|\n| [John-David Dalton](http://allyoucanleet.com/) |\n\n## Contributors\n\n| [![twitter/blainebublitz](http://gravatar.com/avatar/ac1c67fd906c9fecd823ce302283b4c1?s=70)](https://twitter.com/blainebublitz "Follow @BlaineBublitz on Twitter") | [![twitter/kitcambridge](http://gravatar.com/avatar/6662a1d02f351b5ef2f8b4d815804661?s=70)](https://twitter.com/kitcambridge "Follow @kitcambridge on Twitter") | [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |\n|---|---|---|\n| [Blaine Bublitz](http://www.iceddev.com/) | [Kit Cambridge](http://kitcambridge.be/) | [Mathias Bynens](http://mathiasbynens.be/) |\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lodash/lodash/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n',
+505 silly resolved     readmeFilename: 'README.md',
+505 silly resolved     _id: 'lodash@2.4.1',
+505 silly resolved     _from: 'lodash@~2.4.1' },
+505 silly resolved   { name: 'through',
+505 silly resolved     version: '2.3.4',
+505 silly resolved     description: 'simplified stream contsruction',
+505 silly resolved     main: 'index.js',
+505 silly resolved     scripts: { test: 'set -e; for t in test/*.js; do node $t; done' },
+505 silly resolved     devDependencies: { 'stream-spec': '~0.3.5', tape: '~0.2.2' },
+505 silly resolved     keywords: [ 'stream', 'streams', 'user-streams', 'pipe' ],
+505 silly resolved     author:
+505 silly resolved      { name: 'Dominic Tarr',
+505 silly resolved        email: 'dominic.tarr@gmail.com',
+505 silly resolved        url: 'dominictarr.com' },
+505 silly resolved     license: 'MIT',
+505 silly resolved     repository:
+505 silly resolved      { type: 'git',
+505 silly resolved        url: 'https://github.com/dominictarr/through.git' },
+505 silly resolved     homepage: 'http://github.com/dominictarr/through',
+505 silly resolved     testling: { browsers: [Object], files: 'test/*.js' },
+505 silly resolved     readme: '#through\n\n[![build status](https://secure.travis-ci.org/dominictarr/through.png)](http://travis-ci.org/dominictarr/through)\n\nEasy way to create a `Stream` that is both `readable` and `writable`. \n\n* Pass in optional `write` and `end` methods.\n* `through` takes care of pause/resume logic if you use `this.queue(data)` instead of `this.emit(\'data\', data)`.\n* Use `this.pause()` and `this.resume()` to manage flow.\n* Check `this.paused` to see current flow state. (`write` always returns `!this.paused`).\n\nThis function is the basis for most of the synchronous streams in \n[event-stream](http://github.com/dominictarr/event-stream).\n\n``` js\nvar through = require(\'through\')\n\nthrough(function write(data) {\n    this.queue(data) //data *must* not be null\n  },\n  function end () { //optional\n    this.queue(null)\n  })\n```\n\nOr, can also be used _without_ buffering on pause, use `this.emit(\'data\', data)`,\nand this.emit(\'end\')\n\n``` js\nvar through = require(\'through\')\n\nthrough(function write(data) {\n    this.emit(\'data\', data)\n    //this.pause() \n  },\n  function end () { //optional\n    this.emit(\'end\')\n  })\n```\n\n## Extended Options\n\nYou will probably not need these 99% of the time.\n\n### autoDestroy=false\n\nBy default, `through` emits close when the writable\nand readable side of the stream has ended.\nIf that is not desired, set `autoDestroy=false`.\n\n``` js\nvar through = require(\'through\')\n\n//like this\nvar ts = through(write, end, {autoDestroy: false})\n//or like this\nvar ts = through(write, end)\nts.autoDestroy = false\n```\n\n## License\n\nMIT / Apache2\n',
+505 silly resolved     readmeFilename: 'readme.markdown',
+505 silly resolved     bugs: { url: 'https://github.com/dominictarr/through/issues' },
+505 silly resolved     _id: 'through@2.3.4',
+505 silly resolved     dist: { shasum: '495e40e8d8a8eaebc7c275ea88c2b8fc14c56455' },
+505 silly resolved     _from: 'through@2.3.x',
+505 silly resolved     _resolved: 'https://registry.npmjs.org/through/-/through-2.3.4.tgz' },
+505 silly resolved   { name: 'split',
+505 silly resolved     version: '0.2.10',
+505 silly resolved     description: 'split a Text Stream into a Line Stream',
+505 silly resolved     homepage: 'http://github.com/dominictarr/split',
+505 silly resolved     repository: { type: 'git', url: 'git://github.com/dominictarr/split.git' },
+505 silly resolved     dependencies: { through: '2' },
+505 silly resolved     devDependencies:
+505 silly resolved      { asynct: '*',
+505 silly resolved        'it-is': '1',
+505 silly resolved        ubelt: '~2.9',
+505 silly resolved        'stream-spec': '~0.2',
+505 silly resolved        'event-stream': '~3.0.2' },
+505 silly resolved     scripts: { test: 'asynct test/' },
+505 silly resolved     author:
+505 silly resolved      { name: 'Dominic Tarr',
+505 silly resolved        email: 'dominic.tarr@gmail.com',
+505 silly resolved        url: 'http://bit.ly/dominictarr' },
+505 silly resolved     optionalDependencies: {},
+505 silly resolved     engines: { node: '*' },
+505 silly resolved     readme: '# Split (matcher)\n\n[![build status](https://secure.travis-ci.org/dominictarr/split.png)](http://travis-ci.org/dominictarr/split)\n\nBreak up a stream and reassemble it so that each line is a chunk. matcher may be a `String`, or a `RegExp` \n\nExample, read every line in a file ...\n\n``` js\n  fs.createReadStream(file)\n    .pipe(split())\n    .on(\'data\', function (line) {\n      //each chunk now is a seperate line!\n    })\n\n```\n\n`split` takes the same arguments as `string.split` except it defaults to \'/\\r?\\n/\' instead of \',\', and the optional `limit` paremeter is ignored.\n[String#split](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/split)\n\n# NDJ - Newline Delimited Json\n\n`split` accepts a function which transforms each line.\n\n``` js\nfs.createReadStream(file)\n  .pipe(split(JSON.parse))\n  .on(\'data\', function (obj) {\n    //each chunk now is a a js object\n  })\n  .on(\'error\', function (err) {\n    //syntax errors will land here\n    //note, this ends the stream.\n  })\n```\n\n# License\n\nMIT\n',
+505 silly resolved     readmeFilename: 'readme.markdown',
+505 silly resolved     bugs: { url: 'https://github.com/dominictarr/split/issues' },
+505 silly resolved     _id: 'split@0.2.10',
+505 silly resolved     dist: { shasum: '67097c601d697ce1368f418f06cd201cf0521a57' },
+505 silly resolved     _from: 'split@0.2.x',
+505 silly resolved     _resolved: 'https://registry.npmjs.org/split/-/split-0.2.10.tgz' } ]
+506 info install lodash@2.4.1 into /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+507 info install through@2.3.4 into /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+508 info install split@0.2.10 into /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt
+509 info installOne lodash@2.4.1
+510 info installOne through@2.3.4
+511 info installOne split@0.2.10
+512 verbose from cache /Users/rehabstudio/.npm/lodash/2.4.1/package/package.json
+513 info /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/lodash unbuild
+514 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/lodash/package.json
+515 verbose from cache /Users/rehabstudio/.npm/through/2.3.4/package/package.json
+516 info /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through unbuild
+517 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through/package.json
+518 verbose from cache /Users/rehabstudio/.npm/split/0.2.10/package/package.json
+519 info /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split unbuild
+520 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split/package.json
+521 verbose tar unpack /Users/rehabstudio/.npm/lodash/2.4.1/package.tgz
+522 silly lockFile 5d01ed5f-dules-logfmt-node-modules-lodash /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/lodash
+523 verbose lock /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/lodash /Users/rehabstudio/.npm/5d01ed5f-dules-logfmt-node-modules-lodash.lock
+524 silly lockFile 18c7ca6e-dio-npm-lodash-2-4-1-package-tgz /Users/rehabstudio/.npm/lodash/2.4.1/package.tgz
+525 verbose lock /Users/rehabstudio/.npm/lodash/2.4.1/package.tgz /Users/rehabstudio/.npm/18c7ca6e-dio-npm-lodash-2-4-1-package-tgz.lock
+526 verbose tar unpack /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+527 silly lockFile 409b2ae1-ules-logfmt-node-modules-through /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through
+528 verbose lock /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through /Users/rehabstudio/.npm/409b2ae1-ules-logfmt-node-modules-through.lock
+529 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+530 verbose lock /Users/rehabstudio/.npm/through/2.3.4/package.tgz /Users/rehabstudio/.npm/646ccbc3-io-npm-through-2-3-4-package-tgz.lock
+531 verbose tar unpack /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+532 silly lockFile 587f7fcc-odules-logfmt-node-modules-split /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split
+533 verbose lock /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split /Users/rehabstudio/.npm/587f7fcc-odules-logfmt-node-modules-split.lock
+534 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+535 verbose lock /Users/rehabstudio/.npm/split/0.2.10/package.tgz /Users/rehabstudio/.npm/ba4b199f-dio-npm-split-0-2-10-package-tgz.lock
+536 silly gunzTarPerm modes [ '755', '644' ]
+537 silly gunzTarPerm modes [ '755', '644' ]
+538 silly gunzTarPerm modes [ '755', '644' ]
+539 silly gunzTarPerm extractEntry package.json
+540 silly gunzTarPerm extractEntry package.json
+541 silly gunzTarPerm extractEntry package.json
+542 silly gunzTarPerm extractEntry README.md
+543 silly gunzTarPerm extractEntry lodash.js
+544 silly gunzTarPerm extractEntry index.js
+545 silly gunzTarPerm extractEntry .travis.yml
+546 silly gunzTarPerm extractEntry .npmignore
+547 silly gunzTarPerm extractEntry LICENCE
+548 silly gunzTarPerm extractEntry index.js
+549 silly gunzTarPerm extractEntry .travis.yml
+550 silly gunzTarPerm extractEntry LICENSE.APACHE2
+551 silly gunzTarPerm extractEntry LICENSE.MIT
+552 silly gunzTarPerm extractEntry LICENSE.txt
+553 silly gunzTarPerm extractEntry examples/pretty.js
+554 silly gunzTarPerm extractEntry readme.markdown
+555 silly gunzTarPerm extractEntry readme.markdown
+556 silly gunzTarPerm extractEntry test/auto-destroy.js
+557 silly gunzTarPerm extractEntry test/partitioned_unicode.js
+558 silly gunzTarPerm extractEntry test/split.asynct.js
+559 silly gunzTarPerm extractEntry test/buffering.js
+560 silly gunzTarPerm extractEntry test/end.js
+561 silly gunzTarPerm extractEntry dist/lodash.compat.js
+562 silly gunzTarPerm extractEntry test/try_catch.asynct.js
+563 silly gunzTarPerm extractEntry test/index.js
+564 silly gunzTarPerm extractEntry dist/lodash.compat.min.js
+565 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split/package.json
+566 verbose read json /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through/package.json
+567 silly lockFile 587f7fcc-odules-logfmt-node-modules-split /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split
+568 silly lockFile 587f7fcc-odules-logfmt-node-modules-split /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split
+569 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+570 silly lockFile ba4b199f-dio-npm-split-0-2-10-package-tgz /Users/rehabstudio/.npm/split/0.2.10/package.tgz
+571 silly lockFile 409b2ae1-ules-logfmt-node-modules-through /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through
+572 silly lockFile 409b2ae1-ules-logfmt-node-modules-through /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/through
+573 info preinstall split@0.2.10
+574 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+575 silly lockFile 646ccbc3-io-npm-through-2-3-4-package-tgz /Users/rehabstudio/.npm/through/2.3.4/package.tgz
+576 verbose from cache /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split/package.json
+577 verbose readDependencies using package.json deps
+578 verbose from cache /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split/package.json
+579 verbose readDependencies using package.json deps
+580 silly resolved []
+581 verbose about to build /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split
+582 info build /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split
+583 verbose from cache /Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules/split/package.json
+584 verbose linkStuff [ false,
+584 verbose linkStuff   false,
+584 verbose linkStuff   false,
+584 verbose linkStuff   '/Library/WebServer/Documents/prototypes/heroku/node_modules/logfmt/node_modules' ]
+585 info linkStuff split@0.2.10
+586 verbose from cache /Library/WebServer/Documents/prototypes/heroku/package.json
+587 error TypeError: Object.keys called on non-object
+587 error     at Function.keys (native)
+587 error     at /usr/local/lib/node_modules/npm/lib/build.js:111:18
+587 error     at process._tickCallback (node.js:415:13)
+588 error If you need help, you may report this log at:
+588 error     <http://github.com/isaacs/npm/issues>
+588 error or email it to:
+588 error     <npm-@googlegroups.com>
+589 error System Darwin 13.1.0
+590 error command "node" "/usr/local/bin/npm" "install" "logfmt" "--save"
+591 error cwd /Library/WebServer/Documents/prototypes/heroku
+592 error node -v v0.10.7
+593 error npm -v 1.2.21
+594 error type called_on_non_object
+595 verbose exit [ 1, true ]
